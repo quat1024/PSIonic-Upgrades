@@ -14,7 +14,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 2:29 PM on 5/13/17.
  */
-class PieceTrickCloneBox(spell: Spell) : PieceTrick(spell) {
+class PieceTrickCloneBoxKt(spell: Spell) : PieceTrick(spell) {
 
     private lateinit var min: SpellParam
     private lateinit var max: SpellParam

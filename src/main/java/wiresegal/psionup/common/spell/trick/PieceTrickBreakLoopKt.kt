@@ -11,7 +11,7 @@ import vazkii.psi.common.entity.EntitySpellCircle
  * @author WireSegal
  * Created at 8:58 PM on 7/13/16.
  */
-class PieceTrickBreakLoop(spell: Spell) : PieceTrick(spell) {
+class PieceTrickBreakLoopKt(spell: Spell) : PieceTrick(spell) {
     lateinit var target: SpellParam
 
     override fun initParams() {
