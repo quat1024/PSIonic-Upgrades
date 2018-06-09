@@ -39,5 +39,7 @@ public class ModBlocks {
 		GameRegistry.registerTileEntity(TileConjuredPulsar.class, LibMisc.MOD_ID + ":pulsar");
 		GameRegistry.registerTileEntity(TileCracklingStar.class, LibMisc.MOD_ID + ":star");
 		GameRegistry.registerTileEntity(TileCADCase.class, LibMisc.MOD_ID + ":case");
+		
+		//TODO: ItemBlocks
 	}
 }

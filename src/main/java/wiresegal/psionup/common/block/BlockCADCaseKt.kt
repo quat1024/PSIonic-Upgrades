@@ -50,7 +50,7 @@ import java.awt.Color
  * @author WireSegal
  * Created at 2:52 PM on 7/5/16.
  */
-class BlockCADCase(name: String) : BlockModContainer(name, Material.CLOTH, *makeVariants(name)), IBlockColorProvider {
+class BlockCADCaseKt(name: String) : BlockModContainer(name, Material.CLOTH, *makeVariants(name)), IBlockColorProvider {
     companion object {
         fun makeVariants(name: String): Array<String> {
             return Array(16) {
