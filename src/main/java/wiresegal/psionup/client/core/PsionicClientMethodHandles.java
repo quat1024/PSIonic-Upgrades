@@ -25,6 +25,16 @@ import java.util.List;
 
 import static java.lang.invoke.MethodHandles.publicLookup;
 
+
+////////////////////////////////
+/// TODO ACCESS TRANSOFRMER this BITHC
+
+
+
+
+
+
+
 /**
  * @author WireSegal
  *         Created at 10:26 PM on 7/9/16.
@@ -74,7 +84,7 @@ public class PsionicClientMethodHandles {
             setModelVisibilities = publicLookup().unreflect(m);
 
         } catch (Throwable t) {
-            PsionicUpgrades.Companion.getLOGGER().log(Level.ERROR, "Couldn't initialize methodhandles! Things will be broken!");
+            PsionicUpgrades.LOGGER.log(Level.ERROR, "Couldn't initialize methodhandles! Things will be broken!");
             t.printStackTrace();
             throw Throwables.propagate(t);
         }
@@ -174,7 +184,7 @@ public class PsionicClientMethodHandles {
     }
 
     private static RuntimeException propagate(Throwable t) {
-        PsionicUpgrades.Companion.getLOGGER().log(Level.ERROR, "Methodhandle failed!");
+        PsionicUpgrades.LOGGER.log(Level.ERROR, "Methodhandle failed!");
         t.printStackTrace();
         return Throwables.propagate(t);
     }
