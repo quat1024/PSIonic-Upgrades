@@ -13,7 +13,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 12:26 PM on 3/20/16.
  */
-object ModItems {
+object ModItemsKt {
     val liquidColorizer: ItemMod
     val emptyColorizer: ItemMod
     val fakeCAD: ItemMod

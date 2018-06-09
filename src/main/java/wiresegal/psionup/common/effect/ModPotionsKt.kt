@@ -11,7 +11,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 10:06 PM on 7/13/16.
  */
-object ModPotions {
+object ModPotionsKt {
     val psishock: PotionMod
     val psipulse: PotionMod
 

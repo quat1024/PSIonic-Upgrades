@@ -10,7 +10,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 9:44 PM on 7/13/16.
  */
-object ModEntities {
+object ModEntitiesKt {
     private var id = 0
 
     init {

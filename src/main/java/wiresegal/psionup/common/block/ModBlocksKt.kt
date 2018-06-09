@@ -14,7 +14,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 4:42 PM on 3/20/16.
  */
-object ModBlocks {
+object ModBlocksKt {
     val conjured: Block
     val crackle: Block
 

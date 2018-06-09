@@ -1,23 +1,19 @@
 package wiresegal.psionup.common.core;
 
 import net.minecraftforge.fml.common.event.*;
+import wiresegal.psionup.common.effect.ModPotions;
+import wiresegal.psionup.common.spell.ModPieces;
 
 public class CommonProxy {
 	public void pre(FMLPreInitializationEvent e) {
 		//TODO Liblib config stuff here
 		
-		//original used a bunch of kt initializer blocks
-		//which i have transcribed as "init()"
-		//ModPotions.init(); //TODO
-		//ModItems.init(); //TODO move to registry event
-		//ModBlocks.init(); //TODO move to registry event
-		//ModPieces.init();
-		//ModEntities.init(); //TODO entity entry instead?
+		ModPotions.init();
+		ModPieces.init();
 		
 		//FlowColors.EventHandler.init(); //TODO eventbussubscriber?
 		
 		//internal property comparator thingie
-		//TODO unravel wire's crazy block layout
 		/*
 		PsionicAPI.setInternalPropertyComparator { (properties, side) ->
             if (side.axis == EnumFacing.Axis.Y) {

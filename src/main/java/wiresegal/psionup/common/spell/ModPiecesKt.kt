@@ -18,7 +18,7 @@ import wiresegal.psionup.common.spell.trick.*
  * @author WireSegal
  * Created at 5:05 PM on 3/20/16.
  */
-object ModPieces {
+object ModPiecesKt {
 
     val conjurePulsar: PieceContainer
     val conjurePulsarSequence: PieceContainer
