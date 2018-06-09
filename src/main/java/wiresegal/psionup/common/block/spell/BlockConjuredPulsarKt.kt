@@ -26,7 +26,7 @@ import java.util.*
  * @author WireSegal
  * Created at 4:30 PM on 3/20/16.
  */
-class BlockConjuredPulsar(name: String) : BlockModContainer(name, Material.GLASS, name) {
+class BlockConjuredPulsarKt(name: String) : BlockModContainer(name, Material.GLASS, name) {
 
 
     override fun createItemForm() = null
