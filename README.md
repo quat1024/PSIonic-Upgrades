@@ -1,7 +1,11 @@
 # PSIonic Upgrades
 Magic?? Tech?? Addons??
 
-[![Build Status](https://travis-ci.org/yrsegal/PSIonic-Upgrades.svg?branch=master)](https://travis-ci.org/yrsegal/PSIonic-Upgrades?branch=master)
+A mod by yrsegal. A port by quaternary. Very unofficial, very broken.
+
+Build status: ***DON'T EVEN TRY***
+
+Below is the original README.md. Literally nothing you see will work.
 
 ## Items
 
