@@ -10,7 +10,7 @@ import vazkii.psi.common.block.BlockConjured
  * @author WireSegal
  * Created at 4:24 PM on 3/20/16.
  */
-class PieceTrickConjurePulsarLight(spell: Spell) : PieceTrickConjurePulsar(spell) {
+class PieceTrickConjurePulsarLightKt(spell: Spell) : PieceTrickConjurePulsar(spell) {
 
     override fun addStats(meta: SpellMetadata) {
         meta.addStat(EnumSpellStat.POTENCY, 60)

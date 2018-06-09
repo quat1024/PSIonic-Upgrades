@@ -6,6 +6,7 @@ import vazkii.psi.api.spell.param.ParamNumber;
 import vazkii.psi.api.spell.piece.PieceTrick;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.entity.EntitySpellCircle;
+import wiresegal.psionup.common.spell.SpellHelpers;
 
 public class PieceTrickBreakLoop extends PieceTrick {
 	public PieceTrickBreakLoop(Spell spell) {
@@ -28,8 +29,9 @@ public class PieceTrickBreakLoop extends PieceTrick {
 	
 	@Override
 	public Object execute(SpellContext context) throws SpellRuntimeException {
-		Double value = getParamValue(context, target);
-		if(value == null || Math.abs(value) < 1.0) {
+		double value = SpellHelpers.Runtime.getNumber(this, context, target, 0);
+		
+		if(Math.abs(value) < 1.0) {
 			if(context.focalPoint != context.caster) {
 				if(context.focalPoint instanceof EntitySpellCircle) {
 					//Cause the spell circle to finish early

@@ -20,7 +20,7 @@ import wiresegal.psionup.common.block.tile.TileConjuredPulsar
  * @author WireSegal
  * Created at 4:24 PM on 3/20/16.
  */
-open class PieceTrickConjurePulsar(spell: Spell) : PieceTrick(spell) {
+open class PieceTrickConjurePulsarKt(spell: Spell) : PieceTrick(spell) {
     internal lateinit var position: SpellParam
     internal lateinit var time: SpellParam
 

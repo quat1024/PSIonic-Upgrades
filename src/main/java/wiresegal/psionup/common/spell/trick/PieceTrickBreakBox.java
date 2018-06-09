@@ -45,8 +45,10 @@ public class PieceTrickBreakBox extends PieceTrick {
 	public Object execute(SpellContext context) throws SpellRuntimeException {
 		BlockPos minPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, min);
 		BlockPos maxPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, max);
-		Double totalOperations = getParamValue(context, total);
+		Double totalOperations = SpellHelpers.Runtime.getNumber(this, context, total, 0);
 		BlockProperties blockProperties = getParamValue(context, mask);
+		
+		if(totalOperations == 0) return null;
 		
 		int successfulOperations = 0;
 		

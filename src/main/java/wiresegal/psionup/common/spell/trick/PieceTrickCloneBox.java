@@ -2,11 +2,9 @@ package wiresegal.psionup.common.spell.trick;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
-import vazkii.psi.api.internal.Vector3;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamVector;
 import vazkii.psi.api.spell.piece.PieceTrick;
-import vazkii.psi.common.spell.trick.block.PieceTrickPlaceBlock;
 import wiresegal.psionup.api.BlockProperties;
 import wiresegal.psionup.api.ParamBlockProperties;
 import wiresegal.psionup.common.lib.LibMisc;
@@ -69,7 +67,7 @@ public class PieceTrickCloneBox extends PieceTrick {
 					
 					IBlockState atState = context.caster.world.getBlockState(mutTestPos);
 					if(atState == blockProperties.getState()) {
-						SpellHelpers.Runtime.placeBlock(context, mutPlacePos, mutPlacePos == minSpecifiedPos || mutPlacePos == maxSpecifiedPos);
+						SpellHelpers.Runtime.placeBlockFromInventory(context, mutPlacePos, mutPlacePos == minSpecifiedPos || mutPlacePos == maxSpecifiedPos);
 					}
 				}
 			}
