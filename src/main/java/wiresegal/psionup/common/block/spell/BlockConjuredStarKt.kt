@@ -18,7 +18,7 @@ import wiresegal.psionup.common.block.tile.TileCracklingStar
  * @author WireSegal
  * Created at 4:30 PM on 3/20/16.
  */
-class BlockConjuredStar(name: String) : BlockModContainer(name, Material.GLASS, name) {
+class BlockConjuredStarKt(name: String) : BlockModContainer(name, Material.GLASS, name) {
 
     override fun createItemForm() = null
 
