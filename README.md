@@ -1,11 +1,28 @@
 # PSIonic Upgrades
 Magic?? Tech?? Addons??
 
-A mod by yrsegal. A port by quaternary. Very unofficial, very broken.
+A mod by yrsegal. A 1.11 -> 1.12 and Kotlin -> Java port by quaternary.
 
-Build status: ***DON'T EVEN TRY***
+Very unofficial, very broken, very unfinished.
 
-Below is the original README.md. Literally nothing you see will work.
+Build status
+============
+
+***DON'T EVEN TRY!!!!!!***
+
+What in heck
+============
+
+I miss Psionic Upgrades but I'm not comfortable dealing with Kotlin, and I'd rather not deal with the changes in LibLib since then anyways. So I am rewriting the whole mod in Java and removing the LibrarianLib dependency.
+
+The repo is a bit of a mess, on purpose - I'm renaming each Kotlin file as I port it from `TheFile.kt` to `TheFileKt.kt`, and creating a new `TheFile.java`, so I can crossreference the original Kotlin source if need be. When I've ported every file, I will remove all the Kotlin files.
+
+This is a weird way of working, and yes, it's dumb.
+
+Original README feature list
+=============================
+
+Keep in mind that at the moment literally nothing you see will work.
 
 ## Items
 
