@@ -27,7 +27,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 9:56 PM on 7/4/16.
  */
-class BlockPlate(name: String) : BlockMod(name, Material.IRON, *makeVariants(name)), IBlockColorProvider {
+class BlockPlateKt(name: String) : BlockMod(name, Material.IRON, *makeVariants(name)), IBlockColorProvider {
     companion object {
         fun makeVariants(name: String): Array<String> {
             return Array(16) {
