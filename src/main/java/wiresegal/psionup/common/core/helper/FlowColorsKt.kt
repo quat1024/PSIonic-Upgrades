@@ -16,7 +16,7 @@ import wiresegal.psionup.common.items.ModItems
  * @author WireSegal
  * Created at 5:12 PM on 7/10/16.
  */
-object FlowColors {
+object FlowColorsKt {
 
     interface IAcceptor
 
