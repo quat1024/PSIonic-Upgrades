@@ -2,6 +2,7 @@ package wiresegal.psionup.common.core;
 
 import net.minecraftforge.fml.common.event.*;
 import wiresegal.psionup.common.effect.ModPotions;
+import wiresegal.psionup.common.entity.ModEntities;
 import wiresegal.psionup.common.spell.ModPieces;
 
 public class CommonProxy {
@@ -26,6 +27,7 @@ public class CommonProxy {
 	
 	public void init(FMLInitializationEvent e) {
 		//ModRecipes.init(); //TODO Json Recipes
+		ModEntities.createWatchers();
 	}
 	
 	public void post(FMLPostInitializationEvent e) {

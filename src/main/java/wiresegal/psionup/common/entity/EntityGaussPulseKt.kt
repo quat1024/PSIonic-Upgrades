@@ -35,7 +35,7 @@ import wiresegal.psionup.common.network.MessageSparkleSphere
 import java.awt.Color
 import java.util.*
 
-open class EntityGaussPulse : EntityThrowable {
+open class EntityGaussPulseKt : EntityThrowable {
     var timeAlive: Int = 0
     var uuid: UUID? = null
     var ammo: AmmoStatus
@@ -47,7 +47,7 @@ open class EntityGaussPulse : EntityThrowable {
     }
 
     constructor(worldIn: World, throwerIn: EntityLivingBase, ammo: AmmoStatus) : super(worldIn, throwerIn) {
-        this.setHeadingFromThrower(throwerIn, throwerIn.rotationPitch, throwerIn.rotationYaw, 0.0f, 4.5f, 0.0f)
+        this.shoot(throwerIn, throwerIn.rotationPitch, throwerIn.rotationYaw, 0.0f, 4.5f, 0.0f)
         uuid = throwerIn.uniqueID
         this.ammo = ammo
 

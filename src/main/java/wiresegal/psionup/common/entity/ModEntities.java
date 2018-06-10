@@ -20,4 +20,8 @@ public class ModEntities {
 		
 		reg.register(gauss);
 	}
+	
+	public static void createWatchers() {
+		EntityGaussPulse.createWatchers();
+	}
 }
