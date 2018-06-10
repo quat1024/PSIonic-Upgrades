@@ -4,7 +4,7 @@ package wiresegal.psionup.common.lib
  * @author WireSegal
  * Created at 3:33 PM on 3/26/16.
  */
-object LibNames {
+object LibNamesKt {
     object Items {
         const val LIQUID_INK_COLORIZER = "liquidColorizer"
         const val DRAINED_COLORIZER = "emptyColorizer"

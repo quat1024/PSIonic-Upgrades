@@ -13,12 +13,12 @@ public class PieceTrickBreakLoop extends PieceTrick {
 		super(spell);
 	}
 	
-	private SpellParam target;
+	private SpellParam valueParam;
 	
 	@Override
 	public void initParams() {
-		target = new ParamNumber(SpellParam.GENERIC_NAME_NUMBER, SpellParam.BLUE, false, false);
-		addParam(target);
+		valueParam = new ParamNumber(SpellParam.GENERIC_NAME_NUMBER, SpellParam.BLUE, false, false);
+		addParam(valueParam);
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class PieceTrickBreakLoop extends PieceTrick {
 	
 	@Override
 	public Object execute(SpellContext context) throws SpellRuntimeException {
-		double value = SpellHelpers.Runtime.getNumber(this, context, target, 0);
+		double value = SpellHelpers.Runtime.getNumber(this, context, valueParam, 0);
 		
 		if(Math.abs(value) < 1.0) {
 			if(context.focalPoint != context.caster) {

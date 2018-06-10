@@ -25,7 +25,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 9:01 AM on 4/1/16.
  */
-class PieceTrickFormBurst(spell: Spell) : PieceComponentTrick(spell) {
+class PieceTrickFormBurstKt(spell: Spell) : PieceComponentTrick(spell) {
 
     internal lateinit var position: SpellParam
     internal lateinit var ray: SpellParam

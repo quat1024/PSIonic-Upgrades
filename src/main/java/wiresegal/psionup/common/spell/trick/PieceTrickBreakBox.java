@@ -1,12 +1,10 @@
 package wiresegal.psionup.common.spell.trick;
 
 import net.minecraft.util.math.BlockPos;
-import vazkii.psi.api.internal.Vector3;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamNumber;
 import vazkii.psi.api.spell.param.ParamVector;
 import vazkii.psi.api.spell.piece.PieceTrick;
-import vazkii.psi.common.spell.trick.block.PieceTrickBreakBlock;
 import wiresegal.psionup.api.BlockProperties;
 import wiresegal.psionup.api.ParamBlockProperties;
 import wiresegal.psionup.common.lib.LibMisc;
@@ -17,25 +15,24 @@ public class PieceTrickBreakBox extends PieceTrick {
 		super(spell);
 	}
 	
-	private SpellParam min;
-	private SpellParam max;
-	private SpellParam total;
-	private SpellParam mask;
+	private SpellParam minParam;
+	private SpellParam maxParam;
+	private SpellParam totalParam;
+	private SpellParam maskParam;
 	
 	@Override
 	public void initParams() {
-		min = new ParamVector(SpellParam.GENERIC_NAME_VECTOR1, SpellParam.BLUE, false, false);
-		max = new ParamVector(SpellParam.GENERIC_NAME_VECTOR2, SpellParam.RED, false, false);
-		total = new ParamNumber(SpellParam.GENERIC_NAME_MAX, SpellParam.GREEN, false, true);
-		//TODO: shove this into libnames
-		mask = new ParamBlockProperties(LibMisc.MOD_ID + ".spellparam.mask", SpellParam.CYAN, true);
-		SpellHelpers.Building.addAllParams(this, min, max, total, mask);
+		minParam = new ParamVector(SpellParam.GENERIC_NAME_VECTOR1, SpellParam.BLUE, false, false);
+		maxParam = new ParamVector(SpellParam.GENERIC_NAME_VECTOR2, SpellParam.RED, false, false);
+		totalParam = new ParamNumber(SpellParam.GENERIC_NAME_MAX, SpellParam.GREEN, false, true);
+		maskParam = new ParamBlockProperties(ParamBlockProperties.GENERIC_NAME_MASK, SpellParam.CYAN, true);
+		SpellHelpers.Building.addAllParams(this, minParam, maxParam, totalParam, maskParam);
 	}
 	
 	@Override
 	public void addToMetadata(SpellMetadata meta) throws SpellCompilationException, ArithmeticException {
 		super.addToMetadata(meta);
-		Double maxBlocksValue = SpellHelpers.Compilation.ensurePositiveAndNonzero(this, total);
+		Double maxBlocksValue = SpellHelpers.Compilation.ensurePositiveAndNonzero(this, totalParam);
 		
 		meta.addStat(EnumSpellStat.POTENCY, maxBlocksValue.intValue() * 8);
 		meta.addStat(EnumSpellStat.COST, maxBlocksValue.intValue() * 8);
@@ -43,10 +40,10 @@ public class PieceTrickBreakBox extends PieceTrick {
 	
 	@Override
 	public Object execute(SpellContext context) throws SpellRuntimeException {
-		BlockPos minPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, min);
-		BlockPos maxPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, max);
-		Double totalOperations = SpellHelpers.Runtime.getNumber(this, context, total, 0);
-		BlockProperties blockProperties = getParamValue(context, mask);
+		BlockPos minPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, minParam);
+		BlockPos maxPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, maxParam);
+		Double totalOperations = SpellHelpers.Runtime.getNumber(this, context, totalParam, 0);
+		BlockProperties blockProperties = getParamValue(context, maskParam);
 		
 		if(totalOperations == 0) return null;
 		

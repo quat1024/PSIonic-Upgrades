@@ -9,6 +9,7 @@ import vazkii.psi.api.spell.*;
 import vazkii.psi.common.spell.trick.block.PieceTrickBreakBlock;
 import vazkii.psi.common.spell.trick.block.PieceTrickPlaceBlock;
 
+@SuppressWarnings("UnnecessaryUnboxing") //explicit unboxing is good for your brain
 public class SpellHelpers {	
 	public static class Building {
 		public static void addAllParams(SpellPiece piece, SpellParam... params) {
@@ -19,24 +20,24 @@ public class SpellHelpers {
 	}
 	
 	public static class Compilation {
-		public static Double ensurePositiveAndNonzero(SpellPiece piece, SpellParam param) throws SpellCompilationException {
+		public static double ensurePositiveAndNonzero(SpellPiece piece, SpellParam param) throws SpellCompilationException {
 			Double val = piece.getParamEvaluation(param);
 			
 			if(val == null || val <= 0) {
 				throw new SpellCompilationException(SpellCompilationException.NON_POSITIVE_VALUE, piece.x, piece.y);
 			}
 			
-			return val;
+			return val.doubleValue();
 		}
 		
-		public static Double ensurePositiveOrzero(SpellPiece piece, SpellParam param) throws SpellCompilationException {
+		public static double ensurePositiveOrzero(SpellPiece piece, SpellParam param) throws SpellCompilationException {
 			Double val = piece.getParamEvaluation(param);
 			
 			if(val == null || val <= 0) {
 				throw new SpellCompilationException(SpellCompilationException.NON_POSITIVE_VALUE, piece.x, piece.y);
 			}
 			
-			return val;
+			return val.doubleValue();
 		}
 	}
 	
@@ -54,7 +55,6 @@ public class SpellHelpers {
 			return context.isInRadius(pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5);
 		}
 		
-		@SuppressWarnings("UnnecessaryUnboxing") //explicit unboxing is good for your brain
 		public static double getNumber(SpellPiece piece, SpellContext context, SpellParam param, double def) {
 			Double value = piece.getParamValue(context, param);
 			if(value == null) return def;

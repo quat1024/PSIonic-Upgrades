@@ -17,7 +17,7 @@ import java.awt.Color
  * @author WireSegal
  * Created at 1:55 PM on 3/27/16.
  */
-class PieceTrickParticleTrail(spell: Spell) : PieceTrick(spell) {
+class PieceTrickParticleTrailKt(spell: Spell) : PieceTrick(spell) {
     internal lateinit var position: SpellParam
     internal lateinit var ray: SpellParam
     internal lateinit var length: SpellParam

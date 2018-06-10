@@ -15,20 +15,19 @@ public class PieceTrickCloneBox extends PieceTrick {
 		super(spell);
 	}
 	
-	private SpellParam min;
-	private SpellParam max;
-	private SpellParam base;
-	private SpellParam mask;
+	private SpellParam minParam;
+	private SpellParam maxParam;
+	private SpellParam baseParam;
+	private SpellParam maskParam;
 	
 	@Override
 	public void initParams() {
-		min = new ParamVector(SpellParam.GENERIC_NAME_VECTOR1, SpellParam.BLUE, false, false);
-		max = new ParamVector(SpellParam.GENERIC_NAME_VECTOR2, SpellParam.RED, false, false);
-		base = new ParamVector(SpellParam.GENERIC_NAME_BASE, SpellParam.GREEN, false, false);
-		//TODO libnames this
-		mask = new ParamBlockProperties(LibMisc.MOD_ID + ".spellparam.mask", SpellParam.CYAN, false);
+		minParam = new ParamVector(SpellParam.GENERIC_NAME_VECTOR1, SpellParam.BLUE, false, false);
+		maxParam = new ParamVector(SpellParam.GENERIC_NAME_VECTOR2, SpellParam.RED, false, false);
+		baseParam = new ParamVector(SpellParam.GENERIC_NAME_BASE, SpellParam.GREEN, false, false);
+		maskParam = new ParamBlockProperties(ParamBlockProperties.GENERIC_NAME_MASK, SpellParam.CYAN, false);
 		
-		SpellHelpers.Building.addAllParams(this, min, max, base, mask);
+		SpellHelpers.Building.addAllParams(this, minParam, maxParam, baseParam, maskParam);
 	}
 	
 	@Override
@@ -40,10 +39,10 @@ public class PieceTrickCloneBox extends PieceTrick {
 	
 	@Override
 	public Object execute(SpellContext context) throws SpellRuntimeException {
-		BlockPos minSpecifiedPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, min);
-		BlockPos maxSpecifiedPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, max);
-		BlockPos basePos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, base);
-		BlockProperties blockProperties = getParamValue(context, mask);
+		BlockPos minSpecifiedPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, minParam);
+		BlockPos maxSpecifiedPos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, maxParam);
+		BlockPos basePos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, baseParam);
+		BlockProperties blockProperties = getParamValue(context, maskParam);
 		
 		//untangle the user's specified min and max, if they get mixed up
 		BlockPos minPos = new BlockPos(Math.min(minSpecifiedPos.getX(), maxSpecifiedPos.getX()), Math.min(minSpecifiedPos.getY(), maxSpecifiedPos.getY()), Math.min(minSpecifiedPos.getZ(), maxSpecifiedPos.getZ()));

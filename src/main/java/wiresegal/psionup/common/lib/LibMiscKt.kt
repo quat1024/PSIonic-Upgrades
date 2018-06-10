@@ -4,7 +4,7 @@ package wiresegal.psionup.common.lib
  * @author WireSegal
  * Created at 3:24 PM on 3/26/16.
  */
-object LibMisc {
+object LibMiscKt {
     const val MOD_NAME = "PSIonic Upgrades"
     const val MOD_ID = "psionup"
 

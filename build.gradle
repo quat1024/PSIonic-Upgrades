@@ -47,8 +47,10 @@ minecraft {
 
     replace 'GRADLE:BUILD', config.build_number
     replace 'GRADLE:VERSION', config.version
+    replace 'GRADLE:FORGE_VERSION', config.forge_version
+    replace 'GRADLE:MC_VERSION', config.mc_version
 
-    replaceIn 'LibMisc.kt'
+    replaceIn 'LibMisc.java'
 
     clientJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
     serverJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
