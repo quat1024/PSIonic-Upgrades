@@ -17,7 +17,7 @@ import wiresegal.psionup.common.items.ModItems
  * @author WireSegal
  * Created at 10:32 PM on 7/8/16.
  */
-object AssemblerGUIHijacker {
+object AssemblerGUIHijackerKt {
 
     init {
         MinecraftForge.EVENT_BUS.register(this)
