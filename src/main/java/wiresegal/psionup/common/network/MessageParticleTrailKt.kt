@@ -18,11 +18,11 @@ import java.awt.Color
  * Created at 12:17 AM on 7/10/16.
  */
 @PacketRegister(Side.CLIENT)
-class MessageParticleTrail(@Save var position: Vec3d? = null,
-                           @Save var ray: Vec3d? = null,
-                           @Save var length: Double = 0.0,
-                           @Save var time: Int = 0,
-                           @Save var cad: ItemStack = ItemStack.EMPTY) : PacketBase() {
+class MessageParticleTrailKt(@Save var position: Vec3d? = null,
+                               @Save var ray: Vec3d? = null,
+                               @Save var length: Double = 0.0,
+                               @Save var time: Int = 0,
+                               @Save var cad: ItemStack = ItemStack.EMPTY) : PacketBase() {
 
     fun makeParticle(world: World, r: Float, g: Float, b: Float, xp: Double, yp: Double, zp: Double, xv: Double, yv: Double, zv: Double, time: Int) {
         val xvn = xv * 0.1

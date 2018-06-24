@@ -22,7 +22,7 @@ import wiresegal.psionup.common.items.spell.ItemFlashRing
  * Created at 12:17 AM on 7/10/16.
  */
 @PacketRegister(Side.SERVER)
-class MessageFlashSync(var spell: Spell? = null) : PacketBase() {
+class MessageFlashSyncKt(var spell: Spell? = null) : PacketBase() {
 
     private fun getStack(p: EntityPlayer, itemClass: Class<*>): ItemStack {
         var item = p.heldItemMainhand?.item

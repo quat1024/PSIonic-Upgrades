@@ -3,6 +3,7 @@ package wiresegal.psionup.common.core;
 import net.minecraftforge.fml.common.event.*;
 import wiresegal.psionup.common.effect.ModPotions;
 import wiresegal.psionup.common.entity.ModEntities;
+import wiresegal.psionup.common.network.PsionicPacketHandler;
 import wiresegal.psionup.common.spell.ModPieces;
 
 public class CommonProxy {
@@ -11,6 +12,8 @@ public class CommonProxy {
 		
 		ModPotions.init();
 		ModPieces.init();
+		
+		PsionicPacketHandler.initPackets();
 		
 		//internal property comparator thingie
 		/*

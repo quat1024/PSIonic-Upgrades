@@ -19,7 +19,7 @@ import java.awt.Color
  * Created at 12:17 AM on 7/10/16.
  */
 @PacketRegister(Side.CLIENT)
-class MessageSparkleSphere(@Save var position: Vec3d = Vec3d.ZERO,
+class MessageSparkleSphereKt(@Save var position: Vec3d = Vec3d.ZERO,
                            @Save var status: EntityGaussPulse.AmmoStatus = EntityGaussPulse.AmmoStatus.DEPLETED) : PacketBase() {
 
     override fun handle(ctx: MessageContext) {
