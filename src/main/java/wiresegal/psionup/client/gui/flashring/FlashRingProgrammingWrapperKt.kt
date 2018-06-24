@@ -13,7 +13,7 @@ import vazkii.psi.common.item.ItemSpellDrive
  * @author WireSegal
  * Created at 10:14 PM on 7/9/16.
  */
-class FlashRingProgrammingWrapper(val player: EntityPlayer, val stack: ItemStack) : TileProgrammer() {
+class FlashRingProgrammingWrapperKt(val player: EntityPlayer, val stack: ItemStack) : TileProgrammer() {
 
     init {
         spell = ItemSpellDrive.getSpell(stack)
