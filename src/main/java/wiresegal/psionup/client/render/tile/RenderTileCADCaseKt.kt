@@ -13,7 +13,7 @@ import wiresegal.psionup.common.block.tile.TileCADCase
  * @author WireSegal
  * Created at 1:44 PM on 5/4/16.
  */
-class RenderTileCADCase : TileEntitySpecialRenderer<TileCADCase>() {
+class RenderTileCADCaseKt : TileEntitySpecialRenderer<TileCADCase>() {
     override fun renderTileEntityAt(te: TileCADCase, x: Double, y: Double, z: Double, partialTicks: Float, destroyStage: Int) {
 
         val state = te.world.getBlockState(te.pos)
