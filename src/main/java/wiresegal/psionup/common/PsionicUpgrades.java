@@ -2,6 +2,7 @@ package wiresegal.psionup.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -15,6 +16,7 @@ import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.command.CommandPsiLearn;
 import wiresegal.psionup.common.command.CommandPsiUnlearn;
 import wiresegal.psionup.common.core.CommonProxy;
+import wiresegal.psionup.common.core.PsionicSoundEvents;
 import wiresegal.psionup.common.entity.ModEntities;
 import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.lib.LibMisc;
@@ -67,6 +69,11 @@ public class PsionicUpgrades {
 		@SubscribeEvent
 		public static void entities(RegistryEvent.Register<EntityEntry> e) {
 			ModEntities.register(e.getRegistry());
+		}
+		
+		@SubscribeEvent
+		public static void sounds(RegistryEvent.Register<SoundEvent> e) {
+			PsionicSoundEvents.registerSounds(e.getRegistry());
 		}
 	}
 }

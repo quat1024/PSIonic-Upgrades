@@ -30,7 +30,7 @@ public class SpellHelpers {
 			return val.doubleValue();
 		}
 		
-		public static double ensurePositiveOrzero(SpellPiece piece, SpellParam param) throws SpellCompilationException {
+		public static double ensurePositiveOrZero(SpellPiece piece, SpellParam param) throws SpellCompilationException {
 			Double val = piece.getParamEvaluation(param);
 			
 			if(val == null || val <= 0) {

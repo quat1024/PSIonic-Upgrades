@@ -13,7 +13,7 @@ import vazkii.psi.api.spell.piece.PieceTrick;
 import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.spell.BlockConjuredPulsar;
 import wiresegal.psionup.common.block.tile.TileConjuredPulsar;
-import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelper;
+import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelpers;
 import wiresegal.psionup.common.spell.SpellHelpers;
 
 public class PieceTrickConjurePulsar extends PieceTrick {
@@ -76,7 +76,7 @@ public class PieceTrickConjurePulsar extends PieceTrick {
 				pulsar.setTime((int) time);
 			}
 			
-			ItemStack playerColorizer = FlowColorHelper.getColor(PsiAPI.getPlayerCAD(context.caster));
+			ItemStack playerColorizer = FlowColorHelpers.getColor(PsiAPI.getPlayerCAD(context.caster));
 			if(!playerColorizer.isEmpty()) pulsar.setColorizer(playerColorizer);
 		}
 	}

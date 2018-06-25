@@ -8,7 +8,7 @@ import wiresegal.psionup.common.spell.ModPieces;
 
 public class CommonProxy {
 	public void pre(FMLPreInitializationEvent e) {
-		//TODO Liblib config stuff here, what does it do
+		ConfigHandler.initConfig(e.getSuggestedConfigurationFile());
 		
 		ModPotions.init();
 		ModPieces.init();

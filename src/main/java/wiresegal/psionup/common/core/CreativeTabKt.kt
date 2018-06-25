@@ -13,7 +13,7 @@ import java.util.*
  * @author WireSegal
  * Created at 1:17 PM on 3/20/16.
  */
-class CreativeTab : CreativeTabs(LibMisc.MOD_ID) {
+class CreativeTabKt : CreativeTabs(LibMisc.MOD_ID) {
     internal lateinit var list: MutableList<ItemStack>
 
     init {

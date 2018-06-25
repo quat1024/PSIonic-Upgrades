@@ -12,7 +12,7 @@ import java.io.File
  * @author WireSegal
  * Created at 1:09 AM on 7/10/16.
  */
-object ConfigHandler {
+object ConfigHandlerKt {
 
     @ConfigPropertyBoolean(LibMisc.MOD_ID, "general", "inline.enabled",
             "Set this to false to prevent the Inline Caster from being crafted.", true)

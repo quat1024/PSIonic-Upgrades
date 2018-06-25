@@ -9,7 +9,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 8:12 PM on 10/3/16.
  */
-object PsionicSoundEvents {
+object PsionicSoundEventsKt {
 
     val THWACK: SoundEvent
 

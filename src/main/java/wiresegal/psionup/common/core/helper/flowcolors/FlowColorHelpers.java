@@ -15,7 +15,7 @@ import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.lib.LibMisc;
 
 @Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)
-public class FlowColorHelper { //TODO: Helper, or handler?
+public class FlowColorHelpers { //TODO: Helper, or handler?
 	
 	@SubscribeEvent
 	public static void playerUpdate(LivingEvent.LivingUpdateEvent e) {

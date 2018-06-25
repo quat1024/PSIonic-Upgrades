@@ -7,7 +7,7 @@ import vazkii.psi.api.cad.ISocketable
  * @author WireSegal
  * Created at 7:40 PM on 7/9/16.
  */
-class IteratorSocketable(val stack: ItemStack) : Iterator<Pair<Int, ItemStack>> {
+class IteratorSocketableKt(val stack: ItemStack) : Iterator<Pair<Int, ItemStack>> {
 
     val item = stack.item as ISocketable
 
