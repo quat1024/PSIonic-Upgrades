@@ -26,7 +26,7 @@ import java.util.*
  * @author WireSegal
  * Created at 12:50 PM on 3/25/16.
  */
-open class CommandPsiLearn : CommandBase() {
+open class CommandPsiLearnKt : CommandBase() {
 
     companion object {
         val level0 = "psidust"

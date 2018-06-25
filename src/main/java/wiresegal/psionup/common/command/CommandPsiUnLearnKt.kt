@@ -11,7 +11,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 12:50 PM on 3/25/16.
  */
-open class CommandPsiUnlearn : CommandPsiLearn() {
+open class CommandPsiUnlearnKt : CommandPsiLearn() {
 
     override fun getName(): String {
         return "psi-unlearn"
