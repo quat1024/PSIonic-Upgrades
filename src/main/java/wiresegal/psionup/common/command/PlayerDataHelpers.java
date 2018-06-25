@@ -12,12 +12,12 @@ import vazkii.psi.common.network.message.MessageDataSync;
 import wiresegal.psionup.common.lib.LibMisc;
 
 public class PlayerDataHelpers {
-	static boolean hasGroup(PlayerDataHandler.PlayerData data, String groupName) {
+	public static boolean hasGroup(PlayerDataHandler.PlayerData data, String groupName) {
 		if(groupName.equals(CommandPsiLearn.level0Name)) return data.level > 0;
 		else return data.isPieceGroupUnlocked(groupName);
 	}
 	
-	static void unlockGroupForFree(PlayerDataHandler.PlayerData data, String groupName) {
+	public static void unlockGroupForFree(PlayerDataHandler.PlayerData data, String groupName) {
 		if(groupName.equals(CommandPsiLearn.level0Name)) {
 			if(data.level == 0) {
 				data.level++;
@@ -33,7 +33,25 @@ public class PlayerDataHelpers {
 		}
 	}
 	
-	static ITextComponent prettyPrintGroupName(String groupName) {
+	public static void lockGroup(PlayerDataHandler.PlayerData data, String groupName) {
+		if(hasGroup(data, groupName)) {
+			if(groupName.equals(CommandPsiLearn.level0Name)) {
+				data.level = 0;
+				data.lastSpellGroup = "";
+				data.levelPoints = Math.min(0, data.levelPoints - 1);
+			} else {
+				data.spellGroupsUnlocked.remove(groupName);
+				if(data.lastSpellGroup.equals(groupName)) {
+					data.lastSpellGroup = "";
+				}
+				data.level--;
+			}
+			
+			data.save();
+		}
+	}
+	
+	public static ITextComponent prettyPrintGroupName(String groupName) {
 		String translationKey;
 		int level;
 		
@@ -67,25 +85,7 @@ public class PlayerDataHelpers {
 		return nameComponent;
 	}
 	
-	static void lockGroup(PlayerDataHandler.PlayerData data, String groupName) {
-		if(hasGroup(data, groupName)) {
-			if(groupName.equals(CommandPsiLearn.level0Name)) {
-				data.level = 0;
-				data.lastSpellGroup = "";
-				data.levelPoints = Math.min(0, data.levelPoints - 1);
-			} else {
-				data.spellGroupsUnlocked.remove(groupName);
-				if(data.lastSpellGroup.equals(groupName)) {
-					data.lastSpellGroup = "";
-				}
-				data.level--;
-			}
-			
-			data.save();
-		}
-	}
-	
-	static void sync(EntityPlayer ent) {
+	public static void sync(EntityPlayer ent) {
 		if(ent instanceof EntityPlayerMP) {
 			EntityPlayerMP playerMP = (EntityPlayerMP) ent;
 			NetworkHandler.INSTANCE.sendTo(new MessageDataSync(PlayerDataHandler.get(playerMP)), playerMP);
