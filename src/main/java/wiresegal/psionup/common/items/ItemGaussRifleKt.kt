@@ -29,7 +29,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 10:10 PM on 7/13/16.
  */
-class ItemGaussRifle(name: String) : ItemMod(name), IItemColorProvider, IGlowingItem, FlowColors.IAcceptor {
+class ItemGaussRifleKt(name: String) : ItemMod(name), IItemColorProvider, IGlowingItem, FlowColors.IAcceptor {
 
     init {
         setMaxStackSize(1)
