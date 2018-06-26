@@ -18,6 +18,18 @@ public class LibLibReplacementItemNBTHelper {
 		stack.getTagCompound().setTag(key, compound);
 	}
 	
+	public static ItemStack getItemStack(ItemStack stack, String key) {
+		if(!stack.hasTagCompound()) return ItemStack.EMPTY;
+		if(!stack.getTagCompound().hasKey(key)) return ItemStack.EMPTY;
+		NBTTagCompound stackNBT = stack.getTagCompound().getCompoundTag(key);
+		return new ItemStack(stackNBT);
+	}
+	
+	public static void setItemStack(ItemStack stack, String key, ItemStack stackToSet) {
+		ensureHasCompound(stack);
+		stack.getTagCompound().setTag(key, stackToSet.serializeNBT());
+	}
+	
 	public static void removeTag(ItemStack stack, String key) {
 		if(!stack.hasTagCompound()) return; //WOW guess it's already gone, amazing
 		

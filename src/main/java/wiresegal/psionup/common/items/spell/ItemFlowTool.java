@@ -29,10 +29,11 @@ import wiresegal.psionup.common.core.helper.flowcolors.IFlowColorAcceptor;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public class ItemFlowTool extends ItemTool implements IPsiAddonTool, IFlowColorAcceptor {
+public abstract class ItemFlowTool extends ItemTool implements IPsiAddonTool, IFlowColorAcceptor {
 	static final ToolMaterial mat = PsiAPI.PSIMETAL_TOOL_MATERIAL;
 	
-	public ItemFlowTool(String toolClass, boolean ebony) {
+	//Use constructors down below
+	private ItemFlowTool(String toolClass, boolean ebony) {
 		super(getAttackDamage(toolClass, mat), getAttackSpeed(toolClass, mat), mat, getEffectiveList(toolClass));
 		this.ebony = ebony;
 	}

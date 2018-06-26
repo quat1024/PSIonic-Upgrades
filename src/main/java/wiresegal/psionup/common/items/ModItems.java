@@ -107,13 +107,23 @@ public class ModItems {
 		//Ebony and Ivory tools and armor
 		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
 		reg.register(createItem(new ItemFlowTool.Shovel(true), LibNames.Items.EBONY_SHOVEL));
-		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
+		reg.register(createItem(new ItemFlowTool.Axe(true), LibNames.Items.EBONY_AXE));
 		reg.register(createItem(new ItemFlowSword(true), LibNames.Items.EBONY_SWORD));
+		
+		reg.register(createItem(new ItemFlowExosuit.Helmet(true), LibNames.Items.EBONY_HELMET));
+		reg.register(createItem(new ItemFlowExosuit.Chestplate(true), LibNames.Items.EBONY_CHEST));
+		reg.register(createItem(new ItemFlowExosuit.Leggings(true), LibNames.Items.EBONY_LEGS));
+		reg.register(createItem(new ItemFlowExosuit.Boots(true), LibNames.Items.EBONY_BOOTS));
 		
 		reg.register(createItem(new ItemFlowTool.Pickaxe(false), LibNames.Items.IVORY_PICKAXE));
 		reg.register(createItem(new ItemFlowTool.Shovel(false), LibNames.Items.IVORY_SHOVEL));
-		reg.register(createItem(new ItemFlowTool.Pickaxe(false), LibNames.Items.IVORY_PICKAXE));
+		reg.register(createItem(new ItemFlowTool.Axe(false), LibNames.Items.IVORY_AXE));
 		reg.register(createItem(new ItemFlowSword(false), LibNames.Items.IVORY_SWORD));
+		
+		reg.register(createItem(new ItemFlowExosuit.Helmet(false), LibNames.Items.IVORY_HELMET));
+		reg.register(createItem(new ItemFlowExosuit.Chestplate(false), LibNames.Items.IVORY_CHEST));
+		reg.register(createItem(new ItemFlowExosuit.Leggings(false), LibNames.Items.IVORY_LEGS));
+		reg.register(createItem(new ItemFlowExosuit.Boots(false), LibNames.Items.IVORY_BOOTS));
 		
 		//Other Stuff
 		

@@ -44,7 +44,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 4:42 PM on 7/9/16.
  */
-open class ItemFlowExosuit(name: String, slot: EntityEquipmentSlot, val ebony: Boolean) : ItemModArmor(name, PsiAPI.PSIMETAL_ARMOR_MATERIAL, slot), ISocketable, ISpellSettable, IPsiEventArmor, IItemColorProvider, FlowColors.IAcceptor, IGlowingItem{
+open class ItemFlowExosuitKt(name: String, slot: EntityEquipmentSlot, val ebony: Boolean) : ItemModArmor(name, PsiAPI.PSIMETAL_ARMOR_MATERIAL, slot), ISocketable, ISpellSettable, IPsiEventArmor, IItemColorProvider, FlowColors.IAcceptor, IGlowingItem{
     companion object {
         val models by lazy {
             Array(4) {

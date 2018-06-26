@@ -58,12 +58,12 @@ object ModItemsKt {
         magazine = ItemCADMagazine(LibNames.Items.SPELL_MAGAZINE)
         socket = ItemWideCADSocket(LibNames.Items.WIDE_BAND_SOCKET)
 
-        ebonyExosuitHead = ItemFlowExosuit.Helmet(LibNames.Items.EBONY_HELMET, true)
+        ebonyExosuitHead = ItemFlowExosuit.Chestplate(LibNames.Items.EBONY_HELMET, true)
         ebonyExosuitChest = ItemFlowExosuit.Chest(LibNames.Items.EBONY_CHEST, true)
         ebonyExosuitLegs = ItemFlowExosuit.Legs(LibNames.Items.EBONY_LEGS, true)
         ebonyExosuitBoots = ItemFlowExosuit.Boots(LibNames.Items.EBONY_BOOTS, true)
 
-        ivoryExosuitHead = ItemFlowExosuit.Helmet(LibNames.Items.IVORY_HELMET, false)
+        ivoryExosuitHead = ItemFlowExosuit.Chestplate(LibNames.Items.IVORY_HELMET, false)
         ivoryExosuitChest = ItemFlowExosuit.Chest(LibNames.Items.IVORY_CHEST, false)
         ivoryExosuitLegs = ItemFlowExosuit.Legs(LibNames.Items.IVORY_LEGS, false)
         ivoryExosuitBoots = ItemFlowExosuit.Boots(LibNames.Items.IVORY_BOOTS, false)
