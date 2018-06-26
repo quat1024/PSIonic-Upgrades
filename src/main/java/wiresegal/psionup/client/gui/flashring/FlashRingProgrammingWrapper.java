@@ -37,9 +37,7 @@ public class FlashRingProgrammingWrapper extends TileProgrammer {
 	
 	//TODO What in the fuck is this hack for
 	@Override
-	public World getWorld() {
-		final TileEntity capturedThis = this;
-		
+	public World getWorld() {		
 		return new World(null, null, player.world.provider, null, true) {
 			@Override
 			protected IChunkProvider createChunkProvider() {
@@ -54,7 +52,7 @@ public class FlashRingProgrammingWrapper extends TileProgrammer {
 			@Nullable
 			@Override
 			public TileEntity getTileEntity(BlockPos pos) {
-				return capturedThis;
+				return FlashRingProgrammingWrapper.this;
 			}
 		};
 	}

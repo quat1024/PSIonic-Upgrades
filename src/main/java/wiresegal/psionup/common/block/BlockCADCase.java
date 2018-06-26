@@ -82,7 +82,7 @@ public class BlockCADCase extends BlockModButNotTheOneInLibLib {
 		TileEntity tile = world.getTileEntity(pos);
 		if(tile instanceof TileCADCase) {
 			TileCADCase cadCase = (TileCADCase) tile;
-			return state.withProperty(COLOR, EnumDyeColor.byMetadata(cadCase.getWoolColor())); //TODO store the dye color on the tile, not its index
+			return state.withProperty(COLOR, cadCase.getDyeColor()); //TODO store the dye color on the tile, not its index
 		} else return state;
 	}
 	
@@ -168,7 +168,9 @@ public class BlockCADCase extends BlockModButNotTheOneInLibLib {
 		if(tile instanceof TileCADCase) {
 			TileCADCase cadCase = (TileCADCase) tile;
 			
-			cadCase.setWoolColor(stack.getItemDamage());
+			//TODO Metadata hacking is bad for your health
+			//Flatten lol
+			cadCase.setDyeColor(EnumDyeColor.byMetadata(stack.getItemDamage()));
 			if(stack.hasDisplayName()) cadCase.setName(stack.getDisplayName());
 			
 			IItemHandler stackHandler = stack.getCapability(ITEM_HANDLER_CAPABILITY, null);

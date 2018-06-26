@@ -22,7 +22,7 @@ import wiresegal.psionup.common.block.BlockCADCase
  * @author WireSegal
  * Created at 3:00 PM on 7/5/16.
  */
-class TileCADCase : TileMod() {
+class TileCADCaseKtKt : TileMod() {
     @Save
     var woolColor = 0
     @Save
