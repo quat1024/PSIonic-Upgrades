@@ -127,43 +127,18 @@ public class ModItems {
 		
 		//Other Stuff
 		
+		reg.register(createItem(new ItemFlashRing(), LibNames.Items.FLASH_RING));
 		reg.register(createItem(new ItemGaussRifle(), LibNames.Items.GAUSS_RIFLE));
 		reg.register(createItem(new Item(), LibNames.Items.GAUSS_BULLET));
 		
 		/*
 		reg.register(new ItemLiquidColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.LIQUID_INK_COLORIZER))); 
 		reg.register(new ItemEmptyColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.DRAINED_COLORIZER))); 
-		reg.register(new ItemFakeCAD(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.INLINE_CASTER))); 
 		reg.register(new ItemCADMagazine(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.SPELL_MAGAZINE))); 
 		reg.register(new ItemWideCADSocket(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.WIDE_BAND_SOCKET))); 
 		
-		reg.register(new ItemFlowExosuit.Helmet(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_HELMET), true)); 
-		reg.register(new ItemFlowExosuit.Chest(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_CHEST), true)); 
-		reg.register(new ItemFlowExosuit.Legs(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_LEGS), true)); 
-		reg.register(new ItemFlowExosuit.Boots(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_BOOTS), true)); 
-		
-		reg.register(new ItemFlowExosuit.Helmet(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_HELMET), false)); 
-		reg.register(new ItemFlowExosuit.Chest(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_CHEST), false)); 
-		reg.register(new ItemFlowExosuit.Legs(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_LEGS), false)); 
-		reg.register(new ItemFlowExosuit.Boots(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_BOOTS), false)); 
-		
-		reg.register(new ItemFlashRing(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.FLASH_RING))); 
-		
-		reg.register(new ItemFlowTool.Pickaxe(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_PICKAXE), true)); 
-		reg.register(new ItemFlowTool.Shovel(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_SHOVEL), true)); 
-		reg.register(new ItemFlowTool.Axe(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_AXE), true)); 
-		reg.register(new ItemFlowSword(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.EBONY_SWORD), true)); 
-		
-		reg.register(new ItemFlowTool.Pickaxe(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_PICKAXE), false)); 
-		reg.register(new ItemFlowTool.Shovel(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_SHOVEL), false)); 
-		reg.register(new ItemFlowTool.Axe(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_AXE), false)); 
-		reg.register(new ItemFlowSword(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.IVORY_SWORD), false)); 
 		
 		reg.register(new ItemBioticSensor(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.BIOTIC_SENSOR))); 
-		
-		reg.register(new ItemGaussRifle(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.GAUSS_RIFLE))); 
-		
-		reg.register(new PsionicItem(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.GAUSS_BULLET))); 
 		
 		reg.register(new ItemUnstableBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.UNSTABLE_BATTERY))); 
 		reg.register(new ItemTwinflowBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.TWINFLOW_BATTERY))); 

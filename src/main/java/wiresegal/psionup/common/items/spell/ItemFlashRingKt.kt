@@ -26,7 +26,7 @@ import vazkii.psi.common.item.base.ModItems as PsiItems
  * @author WireSegal
  * Created at 8:43 AM on 3/20/16.
  */
-class ItemFlashRing(name: String) : ItemMod(name), ISpellContainer {
+class ItemFlashRingKt(name: String) : ItemMod(name), ISpellContainer {
 
     init {
         addPropertyOverride(ResourceLocation(LibMisc.MOD_ID, "active")) {
