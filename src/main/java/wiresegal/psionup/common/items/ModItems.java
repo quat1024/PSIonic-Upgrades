@@ -131,6 +131,9 @@ public class ModItems {
 		reg.register(createItem(new ItemGaussRifle(), LibNames.Items.GAUSS_RIFLE));
 		reg.register(createItem(new Item(), LibNames.Items.GAUSS_BULLET));
 		
+		reg.register(createItem(new ItemUnstableBattery(), LibNames.Items.UNSTABLE_BATTERY));
+		reg.register(createItem(new ItemTwinflowBattery(), LibNames.Items.UNSTABLE_BATTERY));
+		
 		/*
 		reg.register(new ItemLiquidColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.LIQUID_INK_COLORIZER))); 
 		reg.register(new ItemEmptyColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.DRAINED_COLORIZER))); 
@@ -139,9 +142,6 @@ public class ModItems {
 		
 		
 		reg.register(new ItemBioticSensor(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.BIOTIC_SENSOR))); 
-		
-		reg.register(new ItemUnstableBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.UNSTABLE_BATTERY))); 
-		reg.register(new ItemTwinflowBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.TWINFLOW_BATTERY))); 
 		*/
 		
 		if(Loader.isModLoaded("botania")) {

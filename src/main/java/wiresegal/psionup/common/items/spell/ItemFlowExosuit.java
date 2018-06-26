@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.items.spell;
 
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -77,7 +78,7 @@ public abstract class ItemFlowExosuit extends ItemArmor implements IPsiAddonTool
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void addInformation(ItemStack armorPiece, @Nullable World world, List<String> tooltip, ITooltipFlag mistake) {
-		if(mistake.isAdvanced()) {
+		if(GuiScreen.isShiftKeyDown()) {
 			String socketedName = I18n.translateToLocal(ISocketable.getSocketedItemName(armorPiece, "psimisc.none"));
 			tooltip.add(I18n.translateToLocalFormatted("psimisc.spellSelected", socketedName));
 			

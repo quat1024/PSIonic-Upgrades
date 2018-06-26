@@ -14,7 +14,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 10:23 AM on 3/25/16.
  */
-abstract class ItemComponent(name: String, vararg variants: String) : ItemMod(name, *variants), ICADComponent {
+abstract class ItemComponentKt(name: String, vararg variants: String) : ItemMod(name, *variants), ICADComponent {
     private val stats = mutableMapOf<Pair<EnumCADStat, Int>, Int>()
 
     init {
