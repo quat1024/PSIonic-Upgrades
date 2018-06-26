@@ -30,6 +30,14 @@ public class LibLibReplacementItemNBTHelper {
 		stack.getTagCompound().setTag(key, stackToSet.serializeNBT());
 	}
 	
+	public static int getIntegerOrDefault(ItemStack stack, String key, int def) {
+		if(stack.isEmpty()) return def;
+		if(!stack.hasTagCompound()) return def;
+		if(!stack.getTagCompound().hasKey(key)) return def;
+		
+		return stack.getTagCompound().getInteger(key);
+	}
+	
 	public static void removeTag(ItemStack stack, String key) {
 		if(!stack.hasTagCompound()) return; //WOW guess it's already gone, amazing
 		

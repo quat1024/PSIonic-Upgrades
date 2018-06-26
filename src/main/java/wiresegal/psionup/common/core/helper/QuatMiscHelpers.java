@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.core.helper;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
@@ -29,6 +30,21 @@ public final class QuatMiscHelpers {
 		else return splitColor(((ICADColorizer)stack.getItem()).getColor(stack));
 	}
 	
+	public static float[] lerpColor(float[] splitColor1, float[] splitColor2, float lerp) {
+		float[] ret = new float[3];
+		ret[0] = splitColor1[0] * (1 - lerp) + splitColor2[0] * lerp;
+		ret[1] = splitColor1[1] * (1 - lerp) + splitColor2[1] * lerp;
+		ret[2] = splitColor1[2] * (1 - lerp) + splitColor2[2] * lerp;
+		return ret;
+	}
+	
+	public static int mergeColor(float[] splitColor) {
+		int red = (int) (splitColor[0] * 255) & 0xFF;
+		int green = (int) (splitColor[1] * 255) & 0xFF;
+		int blue = (int) (splitColor[2] * 255) & 0xFF;
+		return (red << 16) | (green << 8) | blue;
+	}
+	
 	public static void emitSoundFromEntity(World world, EntityLivingBase entity, SoundEvent sound) {
 		emitSoundFromEntity(world, entity, sound, 1f, 1f);
 	}
@@ -39,5 +55,13 @@ public final class QuatMiscHelpers {
 	
 	public static void emitSoundFromEntity(World world, EntityLivingBase entity, SoundEvent sound, SoundCategory category, float volume, float pitch) {
 		world.playSound(null, entity.posX, entity.posY, entity.posZ, sound, category, volume, pitch);
+	}
+	
+	public static double distanceSquared(double x1, double y1, double z1, double x2, double y2, double z2) {
+		return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2) + (z1 - z2) + (z1 - z2);
+	}
+	
+	public static double distanceSquared(Entity a, Entity b) {
+		return distanceSquared(a.posX, a.posY, a.posZ, b.posX, b.posY, b.posZ);
 	}
 }

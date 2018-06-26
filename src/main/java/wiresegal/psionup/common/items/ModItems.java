@@ -103,6 +103,9 @@ public class ModItems {
 		//CADs and CAD Accessories
 		
 		reg.register(createItem(new ItemFakeCAD(), LibNames.Items.INLINE_CASTER));
+		reg.register(createItem(new ItemWideCADSocket(), LibNames.Items.WIDE_BAND_SOCKET));
+		reg.register(createItem(new ItemLiquidColorizer(), LibNames.Items.LIQUID_INK_COLORIZER));
+		reg.register(createItem(new ItemEmptyColorizer(), LibNames.Items.DRAINED_COLORIZER));
 		
 		//Ebony and Ivory tools and armor
 		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
@@ -131,17 +134,13 @@ public class ModItems {
 		reg.register(createItem(new ItemGaussRifle(), LibNames.Items.GAUSS_RIFLE));
 		reg.register(createItem(new Item(), LibNames.Items.GAUSS_BULLET));
 		
+		reg.register(createItem(new ItemBioticSensor(), LibNames.Items.BIOTIC_SENSOR));
 		reg.register(createItem(new ItemUnstableBattery(), LibNames.Items.UNSTABLE_BATTERY));
 		reg.register(createItem(new ItemTwinflowBattery(), LibNames.Items.UNSTABLE_BATTERY));
 		
 		/*
-		reg.register(new ItemLiquidColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.LIQUID_INK_COLORIZER))); 
-		reg.register(new ItemEmptyColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.DRAINED_COLORIZER))); 
 		reg.register(new ItemCADMagazine(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.SPELL_MAGAZINE))); 
-		reg.register(new ItemWideCADSocket(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.WIDE_BAND_SOCKET))); 
-		
-		
-		reg.register(new ItemBioticSensor(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.BIOTIC_SENSOR))); 
+ 
 		*/
 		
 		if(Loader.isModLoaded("botania")) {

@@ -24,7 +24,9 @@ public abstract class ItemComponent extends Item implements ICADComponent {
 	//Porting note: I removed metadata support -quat
 	private Map<EnumCADStat, Integer> stats = new HashMap<>();
 	
-	protected abstract void registerStats();
+	protected void registerStats() {
+		//No-op by default
+	}
 	
 	@SideOnly(Side.CLIENT)
 	@Override

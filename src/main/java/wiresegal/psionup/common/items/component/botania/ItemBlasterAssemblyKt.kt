@@ -34,7 +34,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 7:05 PM on 3/31/16.
  */
-class ItemBlasterAssembly(name: String) : ItemComponent(name), IExtraVariantHolder, IBlasterComponent {
+class ItemBlasterAssemblyKt(name: String) : ItemComponent(name), IExtraVariantHolder, IBlasterComponent {
 
     init {
         RecipeSorter.register("${LibMisc.MOD_ID}:blasterClip", RecipeBlasterCADClip::class.java, RecipeSorter.Category.SHAPELESS, "")

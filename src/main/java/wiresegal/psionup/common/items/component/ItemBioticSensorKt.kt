@@ -20,7 +20,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 5:44 PM on 7/13/16.
  */
-class ItemBioticSensor(name: String) : ItemMod(name), IExosuitSensor, IItemColorProvider {
+class ItemBioticSensorKt(name: String) : ItemMod(name), IExosuitSensor, IItemColorProvider {
 
     companion object {
 
