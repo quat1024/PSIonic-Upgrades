@@ -2,6 +2,7 @@ package wiresegal.psionup.common.items;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.server.SPacketEntityVelocity;
 import net.minecraft.util.*;
@@ -15,10 +16,8 @@ import wiresegal.psionup.common.entity.EntityGaussPulse;
 
 import static wiresegal.psionup.common.entity.EntityGaussPulse.AmmoStatus.*;
 
-public class ItemGaussRifle extends PsionicItem implements IFlowColorAcceptor {
-	public ItemGaussRifle(ResourceLocation res) {
-		super(res);
-		
+public class ItemGaussRifle extends Item implements IFlowColorAcceptor {
+	public ItemGaussRifle() {		
 		setMaxStackSize(1);
 	}
 	

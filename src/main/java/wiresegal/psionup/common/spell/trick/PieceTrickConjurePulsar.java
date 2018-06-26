@@ -76,7 +76,7 @@ public class PieceTrickConjurePulsar extends PieceTrick {
 				pulsar.setTime((int) time);
 			}
 			
-			ItemStack playerColorizer = FlowColorHelpers.getColor(PsiAPI.getPlayerCAD(context.caster));
+			ItemStack playerColorizer = FlowColorHelpers.getColorizer(PsiAPI.getPlayerCAD(context.caster));
 			if(!playerColorizer.isEmpty()) pulsar.setColorizer(playerColorizer);
 		}
 	}

@@ -3,6 +3,7 @@ package wiresegal.psionup.common;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.SoundEvent;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -30,8 +31,6 @@ public class PsionicUpgrades {
 	public static CommonProxy PROXY;
 	
 	public static final Logger LOGGER = LogManager.getLogger(LibMisc.MOD_ID);
-	
-	// events!
 	
 	@Mod.EventHandler
 	public static void preinit(FMLPreInitializationEvent e) {

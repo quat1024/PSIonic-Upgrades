@@ -15,7 +15,7 @@ import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.lib.LibMisc;
 
 @Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)
-public class FlowColorHelpers { //TODO: Helper, or handler?
+public class FlowColorHelpers {
 	
 	@SubscribeEvent
 	public static void playerUpdate(LivingEvent.LivingUpdateEvent e) {
@@ -26,12 +26,12 @@ public class FlowColorHelpers { //TODO: Helper, or handler?
 			EntityPlayer player = (EntityPlayer) ent;
 			ItemStack cad = PsiAPI.getPlayerCAD(player);
 			if(cad.isEmpty()) {
-				clearColor(player);
+				clearColorizer(player);
 			} else {
 				ItemStack colorizer = ((ICAD)cad.getItem()).getComponentInSlot(cad, EnumCADComponent.DYE);
 				//TODO: Is this a failsafe, or a "default"?
 				if(colorizer.isEmpty()) colorizer = new ItemStack(ModItems.liquidColorizer);
-				applyColor(player, colorizer);
+				applyColorizer(player, colorizer);
 			}
 		}
 	}
@@ -39,33 +39,33 @@ public class FlowColorHelpers { //TODO: Helper, or handler?
 	private static final String TAG_FLOW_COLOR = "FlowColor";
 	
 	//TODO rename these to "colorizer"
-	private static void applyColor(EntityPlayer player, ItemStack color) {
+	public static void applyColorizer(EntityPlayer player, ItemStack color) {
 		for(int i = 0; i < player.inventory.getSizeInventory(); i++) {
 			ItemStack slot = player.inventory.getStackInSlot(i);
 			if(slot.isEmpty()) continue;
 			if(!(slot.getItem() instanceof IFlowColorAcceptor)) continue;
-			applyColor(slot, color);
+			applyColorizer(slot, color);
 		}
 	}
 	
-	private static void applyColor(ItemStack colorable, ItemStack colorizer) {
+	public static void applyColorizer(ItemStack colorable, ItemStack colorizer) {
 		LibLibReplacementItemNBTHelper.setCompound(colorable, TAG_FLOW_COLOR, colorizer.writeToNBT(new NBTTagCompound()));
 	}
 	
-	private static void clearColor(EntityPlayer player) {
+	public static void clearColorizer(EntityPlayer player) {
 		for(int i = 0; i < player.inventory.getSizeInventory(); i++) {
 			ItemStack slot = player.inventory.getStackInSlot(i);
 			if(slot.isEmpty()) continue;
 			if(!(slot.getItem() instanceof IFlowColorAcceptor)) continue;
-			clearColor(slot);
+			clearColorizer(slot);
 		}
 	}
 	
-	private static void clearColor(ItemStack colorable) {
+	public static void clearColorizer(ItemStack colorable) {
 		LibLibReplacementItemNBTHelper.removeTag(colorable, TAG_FLOW_COLOR);
 	}
 	
-	public static ItemStack getColor(ItemStack colorable) {
+	public static ItemStack getColorizer(ItemStack colorable) {
 		NBTTagCompound colorizer = LibLibReplacementItemNBTHelper.getCompound(colorable, TAG_FLOW_COLOR);
 		if(colorizer == null) return ItemStack.EMPTY;
 		else return new ItemStack(colorizer);

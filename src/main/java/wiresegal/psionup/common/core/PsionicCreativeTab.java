@@ -8,7 +8,9 @@ import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.lib.LibMisc;
 
 public class PsionicCreativeTab extends CreativeTabs {
-	public PsionicCreativeTab() {
+	public static final PsionicCreativeTab INST = new PsionicCreativeTab();
+	
+	private PsionicCreativeTab() {
 		super(LibMisc.MOD_ID);
 		setNoTitle();
 		setBackgroundImageName(LibMisc.MOD_ID + ".png");

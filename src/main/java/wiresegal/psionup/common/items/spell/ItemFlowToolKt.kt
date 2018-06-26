@@ -44,7 +44,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 10:23 PM on 7/11/16.
  */
-open class ItemFlowTool(name: String, type: String, val ebony: Boolean) : ItemModTool(name, PsiAPI.PSIMETAL_TOOL_MATERIAL, type), ISpellSettable, ISocketable, IItemColorProvider, FlowColors.IAcceptor, IGlowingItem {
+open class ItemFlowToolKt(name: String, type: String, val ebony: Boolean) : ItemModTool(name, PsiAPI.PSIMETAL_TOOL_MATERIAL, type), ISpellSettable, ISocketable, IItemColorProvider, FlowColors.IAcceptor, IGlowingItem {
 
     @SideOnly(Side.CLIENT)
     override fun transformToGlow(itemStack: ItemStack, model: IBakedModel): IBakedModel? {

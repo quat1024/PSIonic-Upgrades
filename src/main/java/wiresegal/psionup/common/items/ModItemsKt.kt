@@ -72,12 +72,12 @@ object ModItemsKt {
 
         ebonyPickaxe = ItemFlowTool.Pickaxe(LibNames.Items.EBONY_PICKAXE, true)
         ebonyShovel = ItemFlowTool.Shovel(LibNames.Items.EBONY_SHOVEL, true)
-        ebonyAxe = ItemFlowTool.Axe(LibNames.Items.EBONY_AXE, true)
+        ebonyAxe = ItemFlowTool.Pickaxe(LibNames.Items.EBONY_AXE, true)
         ebonySword = ItemFlowSword(LibNames.Items.EBONY_SWORD, true)
 
         ivoryPickaxe = ItemFlowTool.Pickaxe(LibNames.Items.IVORY_PICKAXE, false)
         ivoryShovel = ItemFlowTool.Shovel(LibNames.Items.IVORY_SHOVEL, false)
-        ivoryAxe = ItemFlowTool.Axe(LibNames.Items.IVORY_AXE, false)
+        ivoryAxe = ItemFlowTool.Pickaxe(LibNames.Items.IVORY_AXE, false)
         ivorySword = ItemFlowSword(LibNames.Items.IVORY_SWORD, false)
 
         bioticSensor = ItemBioticSensor(LibNames.Items.BIOTIC_SENSOR)

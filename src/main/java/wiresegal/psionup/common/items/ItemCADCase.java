@@ -3,6 +3,7 @@ package wiresegal.psionup.common.items;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.*;
@@ -20,7 +21,7 @@ import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class ItemCADCase extends PsionicItemBlock {
+public class ItemCADCase extends ItemBlock {
 	public ItemCADCase(Block block) {
 		super(block);
 		

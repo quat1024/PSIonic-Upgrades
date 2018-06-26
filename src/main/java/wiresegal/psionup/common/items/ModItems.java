@@ -7,6 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
+import wiresegal.psionup.common.core.PsionicCreativeTab;
 import wiresegal.psionup.common.items.component.*;
 import wiresegal.psionup.common.items.spell.*;
 import wiresegal.psionup.common.lib.LibMisc;
@@ -99,6 +100,25 @@ public class ModItems {
 	public static final Item twinflowBattery = Items.AIR;
 	
 	public static void register(IForgeRegistry<Item> reg) {
+		//CADs and CAD Accessories
+		
+		//...
+		
+		//Ebony and Ivory tools and armor
+		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
+		reg.register(createItem(new ItemFlowTool.Shovel(true), LibNames.Items.EBONY_SHOVEL));
+		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
+		
+		reg.register(createItem(new ItemFlowTool.Pickaxe(false), LibNames.Items.IVORY_PICKAXE));
+		reg.register(createItem(new ItemFlowTool.Shovel(false), LibNames.Items.IVORY_SHOVEL));
+		reg.register(createItem(new ItemFlowTool.Pickaxe(false), LibNames.Items.IVORY_PICKAXE));
+		
+		//Other Stuff
+		
+		reg.register(createItem(new ItemGaussRifle(), LibNames.Items.GAUSS_RIFLE));
+		reg.register(createItem(new Item(), LibNames.Items.GAUSS_BULLET));
+		
+		/*
 		reg.register(new ItemLiquidColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.LIQUID_INK_COLORIZER))); 
 		reg.register(new ItemEmptyColorizer(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.DRAINED_COLORIZER))); 
 		reg.register(new ItemFakeCAD(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.INLINE_CASTER))); 
@@ -135,9 +155,25 @@ public class ModItems {
 		
 		reg.register(new ItemUnstableBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.UNSTABLE_BATTERY))); 
 		reg.register(new ItemTwinflowBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.TWINFLOW_BATTERY))); 
+		*/
 		
 		if(Loader.isModLoaded("botania")) {
 			//CompatItems.init(); TODO
 		}
+	}
+	
+	private static Item createItem(Item item, String name) {
+		return createItem(item, name, true);
+	}
+	
+	private static Item createItem(Item item, String name, boolean showInCreative) {
+		ResourceLocation res = new ResourceLocation(LibMisc.MOD_ID, name);
+		
+		item.setRegistryName(res);
+		item.setUnlocalizedName(res.getResourceDomain() + "." + res.getResourcePath());
+		
+		if(showInCreative) item.setCreativeTab(PsionicCreativeTab.INST);
+		
+		return item;
 	}
 }
