@@ -16,7 +16,7 @@ import java.util.*
  * @author WireSegal
  * Created at 10:11 PM on 7/9/16.
  */
-class GuiFlashRing(val player: EntityPlayer, stack: ItemStack) : GuiProgrammer(FlashRingProgrammingWrapper(player, stack)) {
+class GuiFlashRingKt(val player: EntityPlayer, stack: ItemStack) : GuiProgrammer(FlashRingProgrammingWrapper(player, stack)) {
 
     val spellNameField: GuiTextField
         get() = PsionicClientMethodHandles.getSpellNameField(this)
