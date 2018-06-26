@@ -1,0 +1,8 @@
+{
+	"conditions": {
+		"inline_caster_enabled": "wiresegal.psionup.common.crafting.factory.InlineCasterConditionFactory",
+		"flash_ring_enabled": "wiresegal.psionup.common.crafting.factory.FlashRingConditionFactory",
+		"cad_case_enabled": "wiresegal.psionup.common.crafting.factory.CADCaseConditionFactory",
+		"spell_magazine_enabled": "wiresegal.psionup.common.crafting.factory.SpellMagazineConditionFactory"
+	}
+}
