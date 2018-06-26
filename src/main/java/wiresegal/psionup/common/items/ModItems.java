@@ -102,16 +102,18 @@ public class ModItems {
 	public static void register(IForgeRegistry<Item> reg) {
 		//CADs and CAD Accessories
 		
-		//...
+		reg.register(createItem(new ItemFakeCAD(), LibNames.Items.INLINE_CASTER));
 		
 		//Ebony and Ivory tools and armor
 		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
 		reg.register(createItem(new ItemFlowTool.Shovel(true), LibNames.Items.EBONY_SHOVEL));
 		reg.register(createItem(new ItemFlowTool.Pickaxe(true), LibNames.Items.EBONY_PICKAXE));
+		reg.register(createItem(new ItemFlowSword(true), LibNames.Items.EBONY_SWORD));
 		
 		reg.register(createItem(new ItemFlowTool.Pickaxe(false), LibNames.Items.IVORY_PICKAXE));
 		reg.register(createItem(new ItemFlowTool.Shovel(false), LibNames.Items.IVORY_SHOVEL));
 		reg.register(createItem(new ItemFlowTool.Pickaxe(false), LibNames.Items.IVORY_PICKAXE));
+		reg.register(createItem(new ItemFlowSword(false), LibNames.Items.IVORY_SWORD));
 		
 		//Other Stuff
 		

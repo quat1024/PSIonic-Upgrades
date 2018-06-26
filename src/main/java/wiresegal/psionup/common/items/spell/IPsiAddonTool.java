@@ -64,4 +64,9 @@ public interface IPsiAddonTool extends ISocketable, ISpellSettable {
 			setBulletInSocket(stack, slot, bullet);
 		}
 	}
+	
+	@Override
+	default boolean requiresSneakForSpellSet(ItemStack stack) {
+		return false;
+	}
 }

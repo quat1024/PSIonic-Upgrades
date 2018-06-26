@@ -76,11 +76,6 @@ public class ItemFlowTool extends ItemTool implements IPsiAddonTool, IFlowColorA
 	//TODO item colors
 	
 	@Override
-	public boolean requiresSneakForSpellSet(ItemStack itemStack) {
-		return false;
-	}
-	
-	@Override
 	public boolean onBlockStartBreak(ItemStack stack, BlockPos pos, EntityPlayer player) {
 		super.onBlockStartBreak(stack, pos, player);
 		
