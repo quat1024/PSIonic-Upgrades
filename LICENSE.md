@@ -1,0 +1,1 @@
+Psionic Upgrades is distributed under the [Psi License](https://psi.vazkii.us/license.php).
