@@ -22,39 +22,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class TileCADCase extends TileEntity {
-	ItemStackHandler itemHandler = new ItemStackHandler(2) {
+	ItemStackHandler itemHandler = new CaseStackHandler(){
 		@Override
 		protected void onContentsChanged(int slot) {
 			markDirty();
 			VanillaPacketDispatcher.dispatchTEToNearbyPlayers(TileCADCase.this);
-		}
-		
-		@Override
-		protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-			return 1;
-		}
-		
-		@Nonnull
-		@Override
-		public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
-			Item item = stack.getItem();
-			boolean allowed = false;
-			
-			if(slot == 0) {
-				if(item instanceof ICAD || item instanceof ItemGaussRifle) {
-					allowed = true;
-				}
-			} else if (slot == 1) {
-				if(!(item instanceof ICAD) && item instanceof ISocketable || item instanceof ISocketableController){
-					allowed = true;
-				}
-				
-				if(item instanceof ISpellContainer) {
-					allowed = true;
-				}
-			}
-			
-			return allowed ? super.insertItem(slot, stack, simulate) : stack;
 		}
 	};
 	
@@ -164,5 +136,39 @@ public class TileCADCase extends TileEntity {
 	@Override
 	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState) {
 		return oldState.getBlock() != newState.getBlock();
+	}
+	
+	public static class CaseStackHandler extends ItemStackHandler {
+		public CaseStackHandler() {
+			super(2);
+		}
+		
+		@Override
+		protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
+			return 1;
+		}
+		
+		@Nonnull
+		@Override
+		public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
+			Item item = stack.getItem();
+			boolean allowed = false;
+			
+			if(slot == 0) {
+				if(item instanceof ICAD || item instanceof ItemGaussRifle) {
+					allowed = true;
+				}
+			} else if (slot == 1) {
+				if(!(item instanceof ICAD) && item instanceof ISocketable || item instanceof ISocketableController){
+					allowed = true;
+				}
+				
+				if(item instanceof ISpellContainer) {
+					allowed = true;
+				}
+			}
+			
+			return allowed ? super.insertItem(slot, stack, simulate) : stack;
+		}
 	}
 }

@@ -131,7 +131,7 @@ public class ModItems {
 		
 		reg.register(new ItemGaussRifle(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.GAUSS_RIFLE))); 
 		
-		reg.register(new ItemMod(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.GAUSS_BULLET))); 
+		reg.register(new PsionicItem(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.GAUSS_BULLET))); 
 		
 		reg.register(new ItemUnstableBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.UNSTABLE_BATTERY))); 
 		reg.register(new ItemTwinflowBattery(new ResourceLocation(LibMisc.MOD_ID, LibNames.Items.TWINFLOW_BATTERY))); 

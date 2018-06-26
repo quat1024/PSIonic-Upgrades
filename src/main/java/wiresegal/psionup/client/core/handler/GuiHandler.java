@@ -15,9 +15,9 @@ import wiresegal.psionup.common.items.spell.ItemFlashRing;
 import javax.annotation.Nullable;
 
 public class GuiHandler implements IGuiHandler {
-	private static final int GUI_CASE = 0;
-	private static final int GUI_MAGAZINE = 1;
-	private static final int GUI_FLASH_RING = 2;
+	public static final int GUI_CASE = 0;
+	public static final int GUI_MAGAZINE = 1;
+	public static final int GUI_FLASH_RING = 2;
 	
 	@Nullable
 	@Override

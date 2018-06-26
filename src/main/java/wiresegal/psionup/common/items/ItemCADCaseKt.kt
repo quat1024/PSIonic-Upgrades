@@ -35,7 +35,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 9:09 PM on 7/5/16.
  */
-class ItemCADCase(block: Block) : ItemModBlock(block), IExtraVariantHolder {
+class ItemCADCaseKt(block: Block) : ItemModBlock(block), IExtraVariantHolder {
 
     init {
         setMaxStackSize(1)

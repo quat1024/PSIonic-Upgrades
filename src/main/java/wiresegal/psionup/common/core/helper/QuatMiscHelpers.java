@@ -1,6 +1,10 @@
 package wiresegal.psionup.common.core.helper;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import vazkii.psi.api.cad.ICADColorizer;
@@ -23,5 +27,17 @@ public final class QuatMiscHelpers {
 		if(stack.isEmpty()) return DEFAULT_CAD_COLOR_SPLIT;
 		
 		else return splitColor(((ICADColorizer)stack.getItem()).getColor(stack));
+	}
+	
+	public static void emitSoundFromEntity(World world, EntityLivingBase entity, SoundEvent sound) {
+		emitSoundFromEntity(world, entity, sound, 1f, 1f);
+	}
+	
+	public static void emitSoundFromEntity(World world, EntityLivingBase entity, SoundEvent sound, float volume, float pitch) {
+		emitSoundFromEntity(world, entity, sound, SoundCategory.PLAYERS, volume, pitch);
+	}
+	
+	public static void emitSoundFromEntity(World world, EntityLivingBase entity, SoundEvent sound, SoundCategory category, float volume, float pitch) {
+		world.playSound(null, entity.posX, entity.posY, entity.posZ, sound, category, volume, pitch);
 	}
 }

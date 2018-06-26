@@ -29,6 +29,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import wiresegal.psionup.common.block.tile.TileCADCase;
+import wiresegal.psionup.common.core.PsionicSoundEvents;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -207,7 +208,7 @@ public class BlockCADCase extends BlockModButNotTheOneInLibLib {
 	
 	void playOpenCloseSound(World world, BlockPos pos, boolean closing) {
 		//TODO: use a real sound event, instead of borrowing a vanilla one
-		world.playSound(null, pos, closing ? SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE : SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN, SoundCategory.BLOCKS, 1f, 1f);
+		world.playSound(null, pos, closing ? PsionicSoundEvents.CAD_CASE_CLOSE : PsionicSoundEvents.CAD_CASE_OPEN, SoundCategory.BLOCKS, 1f, 1f);
 	}
 	
 	//Client
