@@ -1,7 +1,7 @@
 # PSIonic Upgrades
 Magic?? Tech?? Addons??
 
-A mod by yrsegal. A 1.11 -> 1.12 and Kotlin -> Java port by quaternary.
+A mod by yrsegal. A 1.10 -> 1.12 and Kotlin -> Java port by quaternary.
 
 Very unofficial, very broken, very unfinished.
 
