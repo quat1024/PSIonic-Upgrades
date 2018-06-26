@@ -19,7 +19,7 @@ import wiresegal.psionup.common.items.spell.ItemFlashRing
  * @author WireSegal
  * Created at 8:30 PM on 7/5/16.
  */
-object GuiHandler : IGuiHandler {
+object GuiHandlerKt : IGuiHandler {
 
     init {
         AssemblerGUIHijacker
