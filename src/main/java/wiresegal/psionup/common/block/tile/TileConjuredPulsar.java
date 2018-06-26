@@ -5,34 +5,30 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
-import vazkii.psi.api.cad.ICADColorizer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import vazkii.psi.common.Psi;
 import vazkii.psi.common.block.BlockConjured;
 import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.spell.BlockConjuredPulsar;
+import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
 
 import java.util.Arrays;
 
 public class TileConjuredPulsar extends TileEntity implements ITickable {
-	int time = -1;
-	ItemStack colorizer = ItemStack.EMPTY;
+	private int time = -1;
+	private ItemStack colorizer = ItemStack.EMPTY;
 	
-	int particleCounter = 0;
+	private int particleCounter = 0;
 	
 	@Override
 	public void update() {
-		if(world.isRemote) {
+		if(world.isRemote) {			
+			float[] colorComponents = QuatMiscHelpers.getSplitColorizerColor(colorizer);
 			
-			int color;
-			if(colorizer.isEmpty()) {
-				color = ICADColorizer.DEFAULT_SPELL_COLOR;
-			} else {
-				color = ((ICADColorizer) colorizer.getItem()).getColor(colorizer);
-			}
-			
-			float red = ((color & 0xFF0000) >> 16) / 255f;
-			float green = ((color & 0x00FF00) >> 8) / 255f;
-			float blue = (color & 0x0000FF) / 255f;
+			float red = colorComponents[0];
+			float green = colorComponents[1];
+			float blue = colorComponents[2];
 			
 			IBlockState state = world.getBlockState(pos);
 			state = state.getBlock().getActualState(state, world, pos);
@@ -92,11 +88,9 @@ public class TileConjuredPulsar extends TileEntity implements ITickable {
 			}
 			
 			particleCounter %= ++particleCounter % 10;
-		}
-		
-		if(time >= 0) {
-			if(time == 0) world.setBlockToAir(pos);
-			time--;
+		} else {
+			if(time > 0) time--;
+			else if(time == 0) world.setBlockToAir(pos);
 		}
 	}
 	
@@ -136,5 +130,11 @@ public class TileConjuredPulsar extends TileEntity implements ITickable {
 		super.readFromNBT(nbt);
 		time = nbt.getInteger("Time");
 		colorizer = new ItemStack(nbt.getCompoundTag("Colorizer"));
+	}
+	
+	//Thanks mojang
+	@Override
+	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState) {
+		return oldState.getBlock() != newState.getBlock();
 	}
 }

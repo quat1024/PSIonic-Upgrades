@@ -21,7 +21,7 @@ import java.awt.Color
  * @author WireSegal
  * Created at 1:46 PM on 5/4/16.
  */
-class TileCracklingStar : TileMod(), ITickable {
+class TileCracklingStarKt : TileMod(), ITickable {
     private val TAG_RAYS = "rays"
 
     @Save
