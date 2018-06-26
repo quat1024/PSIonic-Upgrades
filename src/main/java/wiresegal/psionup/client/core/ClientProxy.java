@@ -7,9 +7,11 @@ import net.minecraft.client.renderer.entity.layers.LayerElytra;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EnumPlayerModelParts;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import wiresegal.psionup.client.core.handler.HUDHandler;
 import wiresegal.psionup.client.render.entity.ExosuitGlowLayer;
 import wiresegal.psionup.client.render.entity.LayerGlowingWire;
 import wiresegal.psionup.client.render.tile.RenderTileCADCase;
@@ -22,6 +24,9 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void pre(FMLPreInitializationEvent e) {
 		super.pre(e);
+		
+		//Don't use SubscribeEvent because I've had some problems when combining it with SideOnly in the past
+		MinecraftForge.EVENT_BUS.register(HUDHandler.class);
 		
 		//HUDHandler.init();
 		

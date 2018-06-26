@@ -24,6 +24,7 @@ public class RenderTileCADCase extends TileEntitySpecialRenderer<TileCADCase> {
 		if(state.getBlock() != ModBlocks.cadCase || !state.getValue(BlockCADCase.OPEN)) return;
 		
 		IItemHandler itemHandler = cadCase.getCapability(ITEM_HANDLER_CAPABILITY, null);
+		if(itemHandler == null) return;
 		
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		

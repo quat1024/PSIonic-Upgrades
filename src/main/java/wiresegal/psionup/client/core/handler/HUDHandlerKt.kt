@@ -29,7 +29,7 @@ import java.awt.Color
  * @author WireSegal
  * Created at 12:44 AM on 7/10/16.
  */
-object HUDHandler {
+object HUDHandlerKt {
 
     init {
         MinecraftForge.EVENT_BUS.register(this)
