@@ -17,7 +17,7 @@ import java.util.*
  * Created at 5:24 PM on 3/20/16.
  */
 
-class TileConjuredPulsar : TileMod(), ITickable {
+class TileConjuredPulsarKt : TileMod(), ITickable {
     @Save
     var time = -1
     @Save
