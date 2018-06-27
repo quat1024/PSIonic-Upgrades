@@ -23,7 +23,7 @@ public class BlockPlate extends BlockModButNotTheOneInLibLib {
 		setSoundType(SoundType.METAL);
 	}
 	
-	PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color", EnumDyeColor.class);
+	public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color", EnumDyeColor.class);
 	
 	@Override
 	@SideOnly(Side.CLIENT)

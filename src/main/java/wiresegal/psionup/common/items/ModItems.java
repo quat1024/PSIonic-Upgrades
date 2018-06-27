@@ -1,6 +1,5 @@
 package wiresegal.psionup.common.items;
 
-import com.teamwizardry.librarianlib.features.base.item.ItemMod;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -139,7 +138,7 @@ public class ModItems {
 		reg.register(createItem(new Item(), LibNames.Items.GAUSS_BULLET));
 		
 		reg.register(createItem(new ItemUnstableBattery(), LibNames.Items.UNSTABLE_BATTERY));
-		reg.register(createItem(new ItemTwinflowBattery(), LibNames.Items.UNSTABLE_BATTERY));
+		reg.register(createItem(new ItemTwinflowBattery(), LibNames.Items.TWINFLOW_BATTERY));
 		
 		if(Loader.isModLoaded("botania")) {
 			BotaniaCompatItems.register(reg);

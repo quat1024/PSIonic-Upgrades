@@ -1,14 +1,10 @@
 package wiresegal.psionup.common.core;
 
-import com.google.common.base.Predicate;
 import com.google.common.base.Throwables;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.BlockRedstoneComparator;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionHelper;
-import net.minecraft.potion.PotionType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -24,7 +20,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import static java.lang.invoke.MethodHandles.publicLookup;
-import static kotlin.text.Typography.bullet;
 
 /**
  * @author WireSegal
@@ -41,7 +36,7 @@ public class PsionicMethodHandles {
             Method m = ReflectionHelper.findMethod(BlockRedstoneComparator.class, LibObfuscation.BLOCKREDSTONECOMPARATOR_CALCULATE_INPUT_STRENGTH, LibObfuscation.BLOCKREDSTONECOMPARATOR_CALCULATE_INPUT_STRENGTH_OBF, World.class, BlockPos.class, IBlockState.class);
             calculateInputStrength = publicLookup().unreflect(m);
         } catch (Throwable t) {
-            PsionicUpgrades.Companion.getLOGGER().log(Level.ERROR, "Couldn't initialize methodhandles! Things will be broken!");
+            PsionicUpgrades.LOGGER.log(Level.ERROR, "Couldn't initialize methodhandles! Things will be broken!");
             t.printStackTrace();
             throw Throwables.propagate(t);
         }
@@ -64,7 +59,7 @@ public class PsionicMethodHandles {
     }
 
     private static RuntimeException propagate(Throwable t) {
-        PsionicUpgrades.Companion.getLOGGER().log(Level.ERROR, "Methodhandle failed!");
+        PsionicUpgrades.LOGGER.log(Level.ERROR, "Methodhandle failed!");
         t.printStackTrace();
         return Throwables.propagate(t);
     }

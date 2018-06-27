@@ -13,7 +13,6 @@ import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.tile.TileCracklingStar;
 import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelpers;
 import wiresegal.psionup.common.lib.LibNames;
-import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickConjureStar extends PieceTrickConjurePulsar {
 	public PieceTrickConjureStar(Spell spell) {

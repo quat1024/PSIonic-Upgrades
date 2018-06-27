@@ -10,8 +10,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.EnumCADComponent;
 import vazkii.psi.api.cad.ICAD;
-import wiresegal.psionup.common.lib.ItemNBTHelpers;
 import wiresegal.psionup.common.items.ModItems;
+import wiresegal.psionup.common.lib.ItemNBTHelpers;
 import wiresegal.psionup.common.lib.LibMisc;
 
 @Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)

@@ -8,5 +8,5 @@ public interface ICadComponentAcceptor {
 	
 	ItemStack getPiece(ItemStack stack, EnumCADComponent type);
 	
-	Boolean acceptsPiece(ItemStack stack, EnumCADComponent type);
+	boolean acceptsPiece(ItemStack stack, EnumCADComponent type);
 }

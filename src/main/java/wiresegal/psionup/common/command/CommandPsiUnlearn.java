@@ -1,6 +1,7 @@
 package wiresegal.psionup.common.command;
 
-import net.minecraft.command.*;
+import net.minecraft.command.CommandBase;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.common.core.handler.PlayerDataHandler;

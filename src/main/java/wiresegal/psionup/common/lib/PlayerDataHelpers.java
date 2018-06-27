@@ -9,8 +9,6 @@ import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.spell.PieceGroup;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.network.message.MessageDataSync;
-import wiresegal.psionup.common.command.CommandPsiLearn;
-import wiresegal.psionup.common.lib.LibMisc;
 
 import java.util.ArrayList;
 import java.util.List;

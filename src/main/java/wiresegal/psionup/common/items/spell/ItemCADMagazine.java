@@ -15,7 +15,6 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.jetbrains.annotations.NotNull;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.*;
 import vazkii.psi.api.internal.VanillaPacketDispatcher;
@@ -27,11 +26,10 @@ import vazkii.psi.common.item.base.ModItems;
 import vazkii.psi.common.spell.SpellCompiler;
 import wiresegal.psionup.client.core.handler.GuiHandler;
 import wiresegal.psionup.common.PsionicUpgrades;
-import wiresegal.psionup.common.lib.ItemNBTHelpers;
-import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.items.base.ICadComponentAcceptor;
-import wiresegal.psionup.common.lib.LibMisc;
+import wiresegal.psionup.common.lib.*;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
@@ -138,22 +136,22 @@ public class ItemCADMagazine extends Item implements IPsiAddonTool, ICadComponen
 	
 	//ICadComponentAcceptor overrides
 	
-	@NotNull
+	@Nonnull
 	@Override
-	public ItemStack setPiece(@NotNull ItemStack stack, @NotNull EnumCADComponent type, @NotNull ItemStack piece) {
+	public ItemStack setPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type, @Nonnull ItemStack piece) {
 		if(type != EnumCADComponent.SOCKET) return stack;
 		else return setSocket(stack, piece);
 	}
 	
-	@NotNull
+	@Nonnull
 	@Override
-	public ItemStack getPiece(@NotNull ItemStack stack, @NotNull EnumCADComponent type) {
+	public ItemStack getPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type) {
 		if(type != EnumCADComponent.SOCKET) return ItemStack.EMPTY;
 		else return getSocket(stack);
 	}
 	
 	@Override
-	public boolean acceptsPiece(@NotNull ItemStack stack, @NotNull EnumCADComponent type) {
+	public boolean acceptsPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type) {
 		return type == EnumCADComponent.SOCKET;
 	}
 	

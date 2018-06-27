@@ -5,12 +5,10 @@ import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraft.client.renderer.entity.layers.LayerElytra;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EnumPlayerModelParts;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.*;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import wiresegal.psionup.client.core.handler.HUDHandler;
 import wiresegal.psionup.client.render.entity.ExosuitGlowLayer;
 import wiresegal.psionup.client.render.entity.LayerGlowingWire;
@@ -53,7 +51,7 @@ public class ClientProxy extends CommonProxy {
 		render.addLayer(new LayerGlowingWire(render));
 		
 		//This is a fragile-feeling method, and the sole purpose is to make a funny meme for yrsegal.
-		//TODO Remove?
+		/* //TODO This block compile-errors (but Intellij doesn't seem to know that until you actually try to compile)
 		ListIterator<LayerRenderer<AbstractClientPlayer>> renderator = PsionicClientMethodHandles.getRenderLayers(render).listIterator();
 		while(renderator.hasNext()) {
 			LayerRenderer<? extends AbstractClientPlayer> layer = renderator.next();
@@ -62,6 +60,7 @@ public class ClientProxy extends CommonProxy {
 				renderator.add(new LayerWireOccludeElytra((LayerElytra) layer));
 			}
 		}
+		*/
 	}
 	
 	static class LayerWireOccludeElytra implements LayerRenderer<AbstractClientPlayer> {

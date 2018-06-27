@@ -20,9 +20,9 @@ import vazkii.psi.api.cad.*;
 import vazkii.psi.api.spell.*;
 import wiresegal.psionup.api.enabling.ITrickEnablerComponent;
 import wiresegal.psionup.api.enabling.botania.*;
-import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.items.base.ItemComponent;
 import wiresegal.psionup.common.lib.LibMisc;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
 import java.util.List;
 

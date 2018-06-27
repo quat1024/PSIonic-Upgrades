@@ -1,8 +1,8 @@
 package wiresegal.psionup.api;
 
-import kotlin.Pair;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.function.Function;

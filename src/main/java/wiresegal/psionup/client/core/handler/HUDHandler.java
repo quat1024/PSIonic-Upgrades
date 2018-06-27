@@ -5,12 +5,10 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -25,7 +23,6 @@ import vazkii.psi.common.lib.LibResources;
 import wiresegal.psionup.common.items.ItemGaussRifle;
 import wiresegal.psionup.common.items.spell.ItemFlashRing;
 
-import java.awt.*;
 import java.util.function.Consumer;
 
 @SideOnly(Side.CLIENT)

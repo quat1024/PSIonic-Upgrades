@@ -3,7 +3,8 @@ package wiresegal.psionup.common.spell.operator;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamAny;
 import vazkii.psi.api.spell.piece.PieceOperator;
-import wiresegal.psionup.common.lib.*;
+import wiresegal.psionup.common.lib.LibNames;
+import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceOperatorEquality extends PieceOperator {
 	public PieceOperatorEquality(Spell spell) {

@@ -4,10 +4,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import vazkii.psi.api.PsiAPI;
-import vazkii.psi.api.cad.EnumCADComponent;
-import vazkii.psi.api.cad.EnumCADStat;
-import vazkii.psi.api.cad.ICAD;
-import vazkii.psi.api.cad.ICADComponent;
+import vazkii.psi.api.cad.*;
 import vazkii.psi.api.internal.TooltipHelper;
 import vazkii.psi.api.spell.*;
 

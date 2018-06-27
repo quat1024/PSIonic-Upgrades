@@ -3,7 +3,6 @@ package wiresegal.psionup.common.gui.cadcase;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import wiresegal.psionup.common.lib.LibMisc;

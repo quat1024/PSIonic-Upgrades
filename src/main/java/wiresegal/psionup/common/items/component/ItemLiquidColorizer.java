@@ -10,16 +10,14 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.jetbrains.annotations.NotNull;
 import vazkii.psi.api.cad.EnumCADComponent;
 import vazkii.psi.api.cad.ICADColorizer;
-import wiresegal.psionup.common.lib.ItemNBTHelpers;
-import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.items.base.ICadComponentAcceptor;
 import wiresegal.psionup.common.items.base.ItemComponent;
-import wiresegal.psionup.common.lib.LibMisc;
+import wiresegal.psionup.common.lib.*;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
@@ -107,20 +105,20 @@ public class ItemLiquidColorizer extends ItemComponent implements ICADColorizer,
 		return stack;
 	}
 	
-	@NotNull
+	@Nonnull
 	@Override
-	public ItemStack setPiece(@NotNull ItemStack stack, @NotNull EnumCADComponent type, @NotNull ItemStack piece) {
+	public ItemStack setPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type, @Nonnull ItemStack piece) {
 		return type == EnumCADComponent.DYE ? setInheriting(stack, piece) : stack;
 	}
 	
-	@NotNull
+	@Nonnull
 	@Override
-	public ItemStack getPiece(@NotNull ItemStack stack, @NotNull EnumCADComponent type) {
+	public ItemStack getPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type) {
 		return type == EnumCADComponent.DYE ? getInheriting(stack) : ItemStack.EMPTY;
 	}
 	
 	@Override
-	public boolean acceptsPiece(@NotNull ItemStack stack, @NotNull EnumCADComponent type) {
+	public boolean acceptsPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type) {
 		return type == EnumCADComponent.DYE;
 	}
 	

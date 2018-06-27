@@ -1,12 +1,10 @@
 package wiresegal.psionup.api;
 
-import kotlin.Pair;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
-import wiresegal.psionup.common.lib.LibMisc;
+import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
 
@@ -15,29 +13,29 @@ import javax.annotation.Nonnull;
  *         Created at 4:23 PM on 5/13/17.
  */
 public class BlockProperties {
-    @NotNull
+    @Nonnull
     private final IBlockState state;
-    @NotNull
+    @Nonnull
     private final BlockPos pos;
-    @NotNull
+    @Nonnull
     private final World world;
 
-    @NotNull
+    @Nonnull
     public IBlockState getState() {
         return state;
     }
 
-    @NotNull
+    @Nonnull
     public BlockPos getPos() {
         return pos;
     }
 
-    @NotNull
+    @Nonnull
     public World getWorld() {
         return world;
     }
 
-    public BlockProperties(@NotNull IBlockState state, @NotNull BlockPos pos, @NotNull World world) {
+    public BlockProperties(@Nonnull IBlockState state, @Nonnull BlockPos pos, @Nonnull World world) {
         this.state = state;
         this.pos = pos;
         this.world = world;
@@ -58,12 +56,12 @@ public class BlockProperties {
         return String.format("%s\n@%d %d %d", state.toString(), pos.getX(), pos.getY(), pos.getZ());
     }
 
-    public boolean sideSolid(@NotNull EnumFacing facing) {
+    public boolean sideSolid(@Nonnull EnumFacing facing) {
         return state.isSideSolid(world, pos, facing);
     }
 
-    public int comparatorOutput(@NotNull EnumFacing facing) {
-        return PsionicAPI.internalPropertyComparator.apply(new Pair<>(this, facing));
+    public int comparatorOutput(@Nonnull EnumFacing facing) {
+        return PsionicAPI.internalPropertyComparator.apply(Pair.of(this, facing));
     }
 
     public float getHardness() {

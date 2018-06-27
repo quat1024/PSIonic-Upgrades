@@ -12,8 +12,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import vazkii.psi.api.exosuit.IExosuitSensor;
 import vazkii.psi.api.exosuit.PsiArmorEvent;
 import vazkii.psi.client.core.handler.ClientTickHandler;
-import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.lib.LibMisc;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
 import java.util.*;
 

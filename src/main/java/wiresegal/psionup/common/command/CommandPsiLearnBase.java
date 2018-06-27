@@ -4,11 +4,7 @@ import net.minecraft.command.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
-import vazkii.psi.api.PsiAPI;
 import wiresegal.psionup.common.lib.LibMisc;
-import wiresegal.psionup.common.lib.PlayerDataHelpers;
-
-import java.util.ArrayList;
 
 public abstract class CommandPsiLearnBase extends CommandBase {	
 	String getLocalizationKey() {

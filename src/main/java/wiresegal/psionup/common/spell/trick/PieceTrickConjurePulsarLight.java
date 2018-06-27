@@ -2,7 +2,6 @@ package wiresegal.psionup.common.spell.trick;
 
 import net.minecraft.block.state.IBlockState;
 import vazkii.psi.api.spell.*;
-import vazkii.psi.api.spell.piece.PieceTrick;
 import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.spell.BlockConjuredPulsar;
 
