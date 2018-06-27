@@ -41,7 +41,7 @@ import vazkii.psi.common.item.base.ModItems as PsiItems
  * @author WireSegal
  * Created at 8:43 AM on 3/20/16.
  */
-class ItemCADMagazine(name: String) : ItemMod(name), ISocketable, ICadComponentAcceptor, ISpellSettable {
+class ItemCADMagazineKt(name: String) : ItemMod(name), ISocketable, ICadComponentAcceptor, ISpellSettable {
 
     companion object {
         fun getSocket(stack: ItemStack): ItemStack {

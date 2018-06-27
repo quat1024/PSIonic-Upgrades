@@ -5,6 +5,9 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -63,5 +66,11 @@ public final class QuatMiscHelpers {
 	
 	public static double distanceSquared(Entity a, Entity b) {
 		return distanceSquared(a.posX, a.posY, a.posZ, b.posX, b.posY, b.posZ);
+	}
+	
+	public static TextComponentTranslation createErrorTranslation(String key, Object... args) {
+		TextComponentTranslation txt = new TextComponentTranslation(key, args);
+		txt.getStyle().setColor(TextFormatting.RED);
+		return txt;
 	}
 }

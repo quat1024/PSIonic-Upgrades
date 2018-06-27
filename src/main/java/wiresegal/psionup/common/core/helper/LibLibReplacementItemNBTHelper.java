@@ -10,6 +10,7 @@ public class LibLibReplacementItemNBTHelper {
 	@Nullable
 	public static NBTTagCompound getCompound(ItemStack stack, String key) {
 		if(!stack.hasTagCompound()) return null;
+		if(!stack.getTagCompound().hasKey(key)) return null;
 		return stack.getTagCompound().getCompoundTag(key);
 	}
 	
