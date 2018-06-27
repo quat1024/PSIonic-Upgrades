@@ -22,8 +22,8 @@ import vazkii.psi.common.item.base.ModItems as PsiItems
  * @author WireSegal
  * Created at 10:06 AM on 3/21/16.
  */
-@JEIPlugin
-class JEICompat : BlankModPlugin() {
+//@JEIPlugin
+class JEICompatKt : BlankModPlugin() {
 
     companion object {
         lateinit var helper: IJeiHelpers
