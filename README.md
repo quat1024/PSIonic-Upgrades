@@ -8,16 +8,12 @@ Very unofficial, very broken, very unfinished.
 Build status
 ============
 
-***DON'T EVEN TRY!!!!!!***
+Still needs *lots* of work before compilation can happen (let alone not crashing LMAO)
 
 What in heck
 ============
 
-I miss Psionic Upgrades but I'm not comfortable dealing with Kotlin, and I'd rather not deal with the changes in LibLib since then anyways. So I am rewriting the whole mod in Java and removing the LibrarianLib dependency.
-
-The repo is a bit of a mess, on purpose - I'm renaming each Kotlin file as I port it from `TheFile.kt` to `TheFileKt.kt`, and creating a new `TheFile.java`, so I can crossreference the original Kotlin source if need be. When I've ported every file, I will remove all the Kotlin files.
-
-This is a weird way of working, and yes, it's dumb.
+I miss Psionic Upgrades but I'm not comfortable dealing with Kotlin. So I rewrote the mod in Java.
 
 Original README feature list
 =============================
