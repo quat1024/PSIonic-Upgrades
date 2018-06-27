@@ -10,7 +10,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
@@ -28,8 +27,8 @@ import vazkii.psi.common.item.base.ModItems;
 import vazkii.psi.common.spell.SpellCompiler;
 import wiresegal.psionup.client.core.handler.GuiHandler;
 import wiresegal.psionup.common.PsionicUpgrades;
-import wiresegal.psionup.common.core.helper.LibLibReplacementItemNBTHelper;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.ItemNBTHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.items.base.ICadComponentAcceptor;
 import wiresegal.psionup.common.lib.LibMisc;
 
@@ -187,14 +186,14 @@ public class ItemCADMagazine extends Item implements IPsiAddonTool, ICadComponen
 	//helpers
 	
 	private static ItemStack getSocket(ItemStack stack) {
-		NBTTagCompound nbt = LibLibReplacementItemNBTHelper.getCompound(stack, "Socket");
+		NBTTagCompound nbt = ItemNBTHelpers.getCompound(stack, "Socket");
 		if(nbt == null) return new ItemStack(ModItems.cadSocket);
 		else return new ItemStack(nbt);
 	}
 	
 	private static ItemStack setSocket(ItemStack stack, ItemStack socket) {
-		if(socket.isEmpty()) LibLibReplacementItemNBTHelper.removeTag(stack, "Socket");
-		else LibLibReplacementItemNBTHelper.setItemStack(stack, "Socket", socket);
+		if(socket.isEmpty()) ItemNBTHelpers.removeTag(stack, "Socket");
+		else ItemNBTHelpers.setItemStack(stack, "Socket", socket);
 		return stack;
 	}
 	

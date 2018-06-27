@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.*;
 import vazkii.psi.api.cad.ICADColorizer;
 import vazkii.psi.common.Psi;
+import wiresegal.psionup.common.lib.NetworkHelpers;
 
 import java.awt.*;
 

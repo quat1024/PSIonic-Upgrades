@@ -1,12 +1,11 @@
-package wiresegal.psionup.common.core.helper;
+package wiresegal.psionup.common.lib;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 import javax.annotation.Nullable;
 
-//TODO when complete with port: remove this dumb name lol
-public class LibLibReplacementItemNBTHelper {
+public class ItemNBTHelpers {
 	@Nullable
 	public static NBTTagCompound getCompound(ItemStack stack, String key) {
 		if(!stack.hasTagCompound()) return null;

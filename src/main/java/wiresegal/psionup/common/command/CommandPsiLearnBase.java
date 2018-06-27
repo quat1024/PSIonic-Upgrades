@@ -6,21 +6,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import vazkii.psi.api.PsiAPI;
 import wiresegal.psionup.common.lib.LibMisc;
+import wiresegal.psionup.common.lib.PlayerDataHelpers;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public abstract class CommandPsiLearnBase extends CommandBase {
-	static final List<String> allGroupNames;
-	static final String level0Name = "psidust";
-	
-	static {
-		//TODO static init feels too early/fragile/classloady but a named init method feels too overkill
-		allGroupNames = new ArrayList<>();
-		allGroupNames.addAll(PsiAPI.groupsForName.keySet());
-		allGroupNames.add(level0Name);
-	}
-	
+public abstract class CommandPsiLearnBase extends CommandBase {	
 	String getLocalizationKey() {
 		return LibMisc.MOD_ID + ".command." + getName();
 	}

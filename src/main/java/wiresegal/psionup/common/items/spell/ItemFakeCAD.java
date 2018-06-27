@@ -12,7 +12,7 @@ import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.core.handler.PsiSoundHandler;
 import vazkii.psi.common.item.ItemCAD;
 import vazkii.psi.common.item.base.ModItems;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelpers;
 
 public class ItemFakeCAD extends Item implements IPsiAddonTool {

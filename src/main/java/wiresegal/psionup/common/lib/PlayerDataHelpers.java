@@ -1,4 +1,4 @@
-package wiresegal.psionup.common.command;
+package wiresegal.psionup.common.lib;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -9,16 +9,30 @@ import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.spell.PieceGroup;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.network.message.MessageDataSync;
+import wiresegal.psionup.common.command.CommandPsiLearn;
 import wiresegal.psionup.common.lib.LibMisc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PlayerDataHelpers {
+	public static final List<String> allGroupNames;
+	public static final String level0Name = "psidust";
+	
+	static {
+		//TODO static init feels too early/fragile/classloady but a named init method feels too overkill
+		allGroupNames = new ArrayList<>();
+		allGroupNames.addAll(PsiAPI.groupsForName.keySet());
+		allGroupNames.add(PlayerDataHelpers.level0Name);
+	}
+	
 	public static boolean hasGroup(PlayerDataHandler.PlayerData data, String groupName) {
-		if(groupName.equals(CommandPsiLearn.level0Name)) return data.level > 0;
+		if(groupName.equals(level0Name)) return data.level > 0;
 		else return data.isPieceGroupUnlocked(groupName);
 	}
 	
 	public static void unlockGroupForFree(PlayerDataHandler.PlayerData data, String groupName) {
-		if(groupName.equals(CommandPsiLearn.level0Name)) {
+		if(groupName.equals(level0Name)) {
 			if(data.level == 0) {
 				data.level++;
 				data.levelPoints++;
@@ -35,7 +49,7 @@ public class PlayerDataHelpers {
 	
 	public static void lockGroup(PlayerDataHandler.PlayerData data, String groupName) {
 		if(hasGroup(data, groupName)) {
-			if(groupName.equals(CommandPsiLearn.level0Name)) {
+			if(groupName.equals(level0Name)) {
 				data.level = 0;
 				data.lastSpellGroup = "";
 				data.levelPoints = Math.min(0, data.levelPoints - 1);
@@ -55,7 +69,7 @@ public class PlayerDataHelpers {
 		String translationKey;
 		int level;
 		
-		if(groupName.equals(CommandPsiLearn.level0Name)) {
+		if(groupName.equals(level0Name)) {
 			translationKey = LibMisc.MOD_ID + ".misc.psidust";
 			level = 0;
 		} else {

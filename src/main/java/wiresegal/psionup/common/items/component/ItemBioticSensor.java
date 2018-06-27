@@ -1,6 +1,5 @@
 package wiresegal.psionup.common.items.component;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -13,7 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import vazkii.psi.api.exosuit.IExosuitSensor;
 import vazkii.psi.api.exosuit.PsiArmorEvent;
 import vazkii.psi.client.core.handler.ClientTickHandler;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.lib.LibMisc;
 
 import java.util.*;

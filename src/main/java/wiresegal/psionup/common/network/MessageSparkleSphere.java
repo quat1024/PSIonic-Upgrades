@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.*;
 import vazkii.psi.api.internal.Vector3;
 import vazkii.psi.common.Psi;
 import wiresegal.psionup.common.entity.EntityGaussPulse;
+import wiresegal.psionup.common.lib.NetworkHelpers;
 
 import java.util.Random;
 

@@ -13,8 +13,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import vazkii.psi.api.cad.EnumCADComponent;
 import vazkii.psi.api.cad.ICADColorizer;
-import wiresegal.psionup.common.core.helper.LibLibReplacementItemNBTHelper;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.ItemNBTHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.items.base.ICadComponentAcceptor;
 import wiresegal.psionup.common.items.base.ItemComponent;
@@ -90,18 +90,18 @@ public class ItemLiquidColorizer extends ItemComponent implements ICADColorizer,
 	private static String TAG_INHERITING = "Inheriting";
 	
 	private static int getColorFromStack(ItemStack stack) {
-		return LibLibReplacementItemNBTHelper.getIntegerOrDefault(stack, TAG_COLOR, Integer.MAX_VALUE);
+		return ItemNBTHelpers.getIntegerOrDefault(stack, TAG_COLOR, Integer.MAX_VALUE);
 	}
 	
 	private static ItemStack getInheriting(ItemStack stack) {
-		return LibLibReplacementItemNBTHelper.getItemStack(stack, TAG_INHERITING);
+		return ItemNBTHelpers.getItemStack(stack, TAG_INHERITING);
 	}
 	
 	private static ItemStack setInheriting(ItemStack stack, ItemStack inheriting) {
 		if(inheriting.isEmpty()) {
-			LibLibReplacementItemNBTHelper.removeTag(stack, TAG_INHERITING);
+			ItemNBTHelpers.removeTag(stack, TAG_INHERITING);
 		} else {
-			LibLibReplacementItemNBTHelper.setItemStack(stack, TAG_INHERITING, inheriting);
+			ItemNBTHelpers.setItemStack(stack, TAG_INHERITING, inheriting);
 		}
 		
 		return stack;

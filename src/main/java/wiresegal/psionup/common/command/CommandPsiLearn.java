@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.spell.PieceGroup;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
+import wiresegal.psionup.common.lib.PlayerDataHelpers;
 
 public class CommandPsiLearn extends CommandPsiLearnBase {
 	@Override
@@ -13,14 +14,14 @@ public class CommandPsiLearn extends CommandPsiLearnBase {
 	}
 	
 	void performOne(EntityPlayer learner, String groupToUnlock, ICommandSender sender) throws CommandException {
-		if(!allGroupNames.contains(groupToUnlock)) {
+		if(!PlayerDataHelpers.allGroupNames.contains(groupToUnlock)) {
 			throw new CommandException(getLocalizationKey() + ".error.not_group", groupToUnlock);
 		}
 		
 		PlayerDataHandler.PlayerData data = PlayerDataHandler.get(learner);
 		
-		if(groupToUnlock.equals(level0Name)) {
-			PlayerDataHelpers.unlockGroupForFree(data, level0Name);
+		if(groupToUnlock.equals(PlayerDataHelpers.level0Name)) {
+			PlayerDataHelpers.unlockGroupForFree(data, PlayerDataHelpers.level0Name);
 			CommandBase.notifyCommandListener(sender, this, getLocalizationKey() + ".success.one", learner.getDisplayName(), PlayerDataHelpers.prettyPrintGroupName(groupToUnlock));
 			return;
 		}
@@ -48,7 +49,7 @@ public class CommandPsiLearn extends CommandPsiLearnBase {
 	void performAll(EntityPlayer learner, ICommandSender sender) {
 		PlayerDataHandler.PlayerData data = PlayerDataHandler.get(learner);
 		
-		for(String groupName : allGroupNames) {
+		for(String groupName : PlayerDataHelpers.allGroupNames) {
 			if(!PlayerDataHelpers.hasGroup(data, groupName)) {
 				PlayerDataHelpers.unlockGroupForFree(data, groupName);
 				data.lastSpellGroup = "";

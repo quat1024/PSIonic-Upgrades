@@ -16,7 +16,7 @@ import wiresegal.psionup.api.enabling.ITrickEnablerComponent;
 import wiresegal.psionup.api.enabling.PieceComponentTrick;
 import wiresegal.psionup.api.enabling.botania.IBlasterComponent;
 import wiresegal.psionup.common.lib.LibMisc;
-import wiresegal.psionup.common.spell.SpellHelpers;
+import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickFormBurst extends PieceComponentTrick {
 	public PieceTrickFormBurst(Spell spell) {

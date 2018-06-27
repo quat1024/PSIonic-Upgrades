@@ -6,7 +6,7 @@ import vazkii.psi.api.spell.param.ParamNumber;
 import vazkii.psi.api.spell.piece.PieceTrick;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.entity.EntitySpellCircle;
-import wiresegal.psionup.common.spell.SpellHelpers;
+import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickBreakLoop extends PieceTrick {
 	public PieceTrickBreakLoop(Spell spell) {

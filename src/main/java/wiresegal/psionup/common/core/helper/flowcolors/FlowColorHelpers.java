@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.EnumCADComponent;
 import vazkii.psi.api.cad.ICAD;
-import wiresegal.psionup.common.core.helper.LibLibReplacementItemNBTHelper;
+import wiresegal.psionup.common.lib.ItemNBTHelpers;
 import wiresegal.psionup.common.items.ModItems;
 import wiresegal.psionup.common.lib.LibMisc;
 
@@ -49,7 +49,7 @@ public class FlowColorHelpers {
 	}
 	
 	public static void applyColorizer(ItemStack colorable, ItemStack colorizer) {
-		LibLibReplacementItemNBTHelper.setCompound(colorable, TAG_FLOW_COLOR, colorizer.writeToNBT(new NBTTagCompound()));
+		ItemNBTHelpers.setCompound(colorable, TAG_FLOW_COLOR, colorizer.writeToNBT(new NBTTagCompound()));
 	}
 	
 	public static void clearColorizer(EntityPlayer player) {
@@ -62,11 +62,11 @@ public class FlowColorHelpers {
 	}
 	
 	public static void clearColorizer(ItemStack colorable) {
-		LibLibReplacementItemNBTHelper.removeTag(colorable, TAG_FLOW_COLOR);
+		ItemNBTHelpers.removeTag(colorable, TAG_FLOW_COLOR);
 	}
 	
 	public static ItemStack getColorizer(ItemStack colorable) {
-		NBTTagCompound colorizer = LibLibReplacementItemNBTHelper.getCompound(colorable, TAG_FLOW_COLOR);
+		NBTTagCompound colorizer = ItemNBTHelpers.getCompound(colorable, TAG_FLOW_COLOR);
 		if(colorizer == null) return ItemStack.EMPTY;
 		else return new ItemStack(colorizer);
 	}

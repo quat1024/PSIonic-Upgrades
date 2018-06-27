@@ -16,7 +16,7 @@ import wiresegal.psionup.client.core.handler.GuiHandler;
 import wiresegal.psionup.common.PsionicUpgrades;
 import wiresegal.psionup.common.block.tile.TileCADCase;
 import wiresegal.psionup.common.core.PsionicSoundEvents;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

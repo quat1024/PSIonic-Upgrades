@@ -9,7 +9,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.common.util.Constants;
 import vazkii.psi.api.internal.Vector3;
 import vazkii.psi.common.Psi;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
 import java.util.HashSet;
 import java.util.Set;

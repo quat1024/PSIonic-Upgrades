@@ -7,8 +7,7 @@ import vazkii.psi.api.spell.param.ParamVector;
 import vazkii.psi.api.spell.piece.PieceTrick;
 import wiresegal.psionup.api.BlockProperties;
 import wiresegal.psionup.api.ParamBlockProperties;
-import wiresegal.psionup.common.lib.LibMisc;
-import wiresegal.psionup.common.spell.SpellHelpers;
+import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickBreakBox extends PieceTrick {
 	public PieceTrickBreakBox(Spell spell) {

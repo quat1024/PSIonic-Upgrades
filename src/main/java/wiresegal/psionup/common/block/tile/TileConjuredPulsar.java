@@ -11,7 +11,7 @@ import vazkii.psi.common.Psi;
 import vazkii.psi.common.block.BlockConjured;
 import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.spell.BlockConjuredPulsar;
-import wiresegal.psionup.common.core.helper.QuatMiscHelpers;
+import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
 import java.util.Arrays;
 

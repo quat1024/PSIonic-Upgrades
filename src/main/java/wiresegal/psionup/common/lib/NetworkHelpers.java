@@ -1,4 +1,4 @@
-package wiresegal.psionup.common.network;
+package wiresegal.psionup.common.lib;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.Vec3d;

@@ -1,4 +1,4 @@
-package wiresegal.psionup.common.core.helper;
+package wiresegal.psionup.common.lib;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

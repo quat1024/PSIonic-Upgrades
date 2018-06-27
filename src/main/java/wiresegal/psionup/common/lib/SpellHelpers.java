@@ -1,4 +1,4 @@
-package wiresegal.psionup.common.spell;
+package wiresegal.psionup.common.lib;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

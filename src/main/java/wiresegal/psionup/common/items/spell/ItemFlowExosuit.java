@@ -9,7 +9,6 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -22,7 +21,7 @@ import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.item.ItemCAD;
 import vazkii.psi.common.item.base.ModItems;
 import vazkii.psi.common.item.tool.ItemPsimetalTool;
-import wiresegal.psionup.common.core.helper.LibLibReplacementItemNBTHelper;
+import wiresegal.psionup.common.lib.ItemNBTHelpers;
 import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelpers;
 import wiresegal.psionup.common.lib.LibMisc;
 
@@ -153,12 +152,12 @@ public abstract class ItemFlowExosuit extends ItemArmor implements IPsiAddonTool
 		
 		@Override
 		public ItemStack getAttachedSensor(ItemStack helmet) {
-			return LibLibReplacementItemNBTHelper.getItemStack(helmet, "Sensor");
+			return ItemNBTHelpers.getItemStack(helmet, "Sensor");
 		}
 		
 		@Override
 		public void attachSensor(ItemStack helmet, ItemStack sensor) {
-			LibLibReplacementItemNBTHelper.setItemStack(helmet, "Sensor", sensor);
+			ItemNBTHelpers.setItemStack(helmet, "Sensor", sensor);
 		}
 		
 		@Override

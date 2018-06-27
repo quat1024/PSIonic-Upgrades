@@ -5,7 +5,7 @@ import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamNumber;
 import vazkii.psi.api.spell.param.ParamVector;
 import vazkii.psi.api.spell.piece.PieceTrick;
-import wiresegal.psionup.common.spell.SpellHelpers;
+import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickParticleTrail extends PieceTrick {
 	public PieceTrickParticleTrail(Spell spell) {

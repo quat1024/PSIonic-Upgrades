@@ -14,7 +14,7 @@ import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.spell.BlockConjuredPulsar;
 import wiresegal.psionup.common.block.tile.TileConjuredPulsar;
 import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelpers;
-import wiresegal.psionup.common.spell.SpellHelpers;
+import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickConjurePulsar extends PieceTrick {
 	public PieceTrickConjurePulsar(Spell spell) {
