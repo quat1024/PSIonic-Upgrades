@@ -12,7 +12,7 @@ import net.minecraftforge.fml.client.config.GuiUtils
 import vazkii.psi.client.core.handler.ClientTickHandler
 import wiresegal.psionup.common.lib.LibMisc
 
-class GuiCADMagazine(player: EntityPlayer, var stack: ItemStack) : GuiContainer(ContainerCADMagazine(player, stack)) {
+class GuiCADMagazineKt(player: EntityPlayer, var stack: ItemStack) : GuiContainer(ContainerCADMagazine(player, stack)) {
 
     var tooltipTime: Int
         get() = (inventorySlots as ContainerCADMagazine).tooltipTime

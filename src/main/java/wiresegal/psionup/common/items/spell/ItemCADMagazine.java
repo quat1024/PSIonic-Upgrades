@@ -185,19 +185,19 @@ public class ItemCADMagazine extends Item implements IPsiAddonTool, ICadComponen
 	
 	//helpers
 	
-	private static ItemStack getSocket(ItemStack stack) {
+	public static ItemStack getSocket(ItemStack stack) {
 		NBTTagCompound nbt = ItemNBTHelpers.getCompound(stack, "Socket");
 		if(nbt == null) return new ItemStack(ModItems.cadSocket);
 		else return new ItemStack(nbt);
 	}
 	
-	private static ItemStack setSocket(ItemStack stack, ItemStack socket) {
+	public static ItemStack setSocket(ItemStack stack, ItemStack socket) {
 		if(socket.isEmpty()) ItemNBTHelpers.removeTag(stack, "Socket");
 		else ItemNBTHelpers.setItemStack(stack, "Socket", socket);
 		return stack;
 	}
 	
-	private static int getSocketSlots(ItemStack stack) {
+	public static int getSocketSlots(ItemStack stack) {
 		ItemStack socket = getSocket(stack);
 		Item socketItem = socket.getItem();
 		if(socketItem instanceof ICADComponent) {
@@ -205,7 +205,7 @@ public class ItemCADMagazine extends Item implements IPsiAddonTool, ICadComponen
 		} else return 0;
 	}
 	
-	private static int getBandwidth(ItemStack stack) {
+	public static int getBandwidth(ItemStack stack) {
 		ItemStack socket = getSocket(stack);
 		Item socketItem = socket.getItem();
 		if(socketItem instanceof ICADComponent) {
@@ -213,7 +213,7 @@ public class ItemCADMagazine extends Item implements IPsiAddonTool, ICadComponen
 		} else return 0;
 	}
 	
-	private Spell getSpell(ItemStack stack) {
+	public Spell getSpell(ItemStack stack) {
 		return ItemSpellDrive.getSpell(getBulletInSocket(stack, getSelectedSlot(stack)));
 	}
 }

@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.util.ResourceLocation
 import wiresegal.psionup.common.lib.LibMisc
 
-class GuiCADCase(player: EntityPlayer, internal var stack: ItemStack) : GuiContainer(ContainerCADCase(player, stack)) {
+class GuiCADCaseKt(player: EntityPlayer, internal var stack: ItemStack) : GuiContainer(ContainerCADCase(player, stack)) {
     val xOffset = 72
     val yOffset = 5 + 29
 

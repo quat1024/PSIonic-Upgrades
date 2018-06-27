@@ -13,7 +13,7 @@ import net.minecraftforge.items.SlotItemHandler
 import vazkii.psi.api.cad.ICAD
 import vazkii.psi.api.cad.ISocketable
 
-class ContainerCADCase(player: EntityPlayer, val stack: ItemStack) : Container() {
+class ContainerCADCaseKt(player: EntityPlayer, val stack: ItemStack) : Container() {
     val inventory = stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
 
     private val slot0: Slot

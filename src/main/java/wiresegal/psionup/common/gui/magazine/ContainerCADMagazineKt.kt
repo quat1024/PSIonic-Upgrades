@@ -9,7 +9,7 @@ import vazkii.psi.api.spell.ISpellContainer
 import wiresegal.psionup.common.items.spell.ItemCADMagazine
 import wiresegal.psionup.common.lib.LibMisc
 
-class ContainerCADMagazine(val player: EntityPlayer, val stack: ItemStack) : Container() {
+class ContainerCADMagazineKt(val player: EntityPlayer, val stack: ItemStack) : Container() {
     val inventory = InventorySocketable(stack, ItemCADMagazine.getBandwidth(stack))
     val cadInventory: InventorySocketable
 

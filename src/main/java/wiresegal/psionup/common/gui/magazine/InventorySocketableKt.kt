@@ -15,7 +15,7 @@ import wiresegal.psionup.common.core.helper.IteratorSocketable
  * @author WireSegal
  * Created at 8:59 PM on 7/5/16.
  */
-class InventorySocketable(val stack: ItemStack, val maxBandwidth: Int = -1) : IInventory {
+class InventorySocketableKt(val stack: ItemStack, val maxBandwidth: Int = -1) : IInventory {
 
     val item = stack.item as ISocketable
 
