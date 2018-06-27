@@ -6,8 +6,8 @@ import vazkii.psi.api.spell.piece.PieceTrick;
 import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.block.spell.BlockConjuredPulsar;
 
-public class PieceTrickConjurePularLight extends PieceTrickConjurePulsar {
-	public PieceTrickConjurePularLight(Spell spell) {
+public class PieceTrickConjurePulsarLight extends PieceTrickConjurePulsar {
+	public PieceTrickConjurePulsarLight(Spell spell) {
 		super(spell);
 	}
 	

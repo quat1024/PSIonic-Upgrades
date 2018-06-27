@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.spell;
 
+import net.minecraftforge.fml.common.Loader;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.spell.SpellPiece;
 import vazkii.psi.common.lib.LibPieceGroups;
@@ -99,6 +100,10 @@ public class ModPieces {
 		register(PieceTrickDebugSpamless.class,
 						LibNames.Spell.SPAMLESS,
 						LibPieceGroups.TUTORIAL_1);
+		
+		if(Loader.isModLoaded("botania")) {
+			BotaniaCompatPieces.init();
+		}
 	}
 	
 	static void register(Class<? extends SpellPiece> pieceClass, String name, String group) {
