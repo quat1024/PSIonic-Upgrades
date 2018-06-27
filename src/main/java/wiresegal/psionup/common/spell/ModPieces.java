@@ -101,11 +101,11 @@ public class ModPieces {
 						LibPieceGroups.TUTORIAL_1);
 	}
 	
-	private static void register(Class<? extends SpellPiece> pieceClass, String name, String group) {
+	static void register(Class<? extends SpellPiece> pieceClass, String name, String group) {
 		register(pieceClass, name, group, false);
 	}
 	
-	private static void register(Class<? extends SpellPiece> pieceClass, String name, String group, boolean main) {
+	static void register(Class<? extends SpellPiece> pieceClass, String name, String group, boolean main) {
 		PsiAPI.registerSpellPieceAndTexture(LibMisc.MOD_ID + "." + name, pieceClass);
 		PsiAPI.addPieceToGroup(pieceClass, group, main);
 		//No return value. TODO does the original actually use the return values?

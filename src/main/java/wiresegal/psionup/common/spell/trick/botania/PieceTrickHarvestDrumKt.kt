@@ -26,16 +26,16 @@ import java.util.*
  * @author WireSegal
  * Created at 9:04 PM on 4/2/16.
  */
-open class PieceTrickHarvestDrum(spell: Spell) : PieceComponentTrick(spell), IManaTrick {
+open class PieceTrickHarvestDrumKt(spell: Spell) : PieceComponentTrick(spell), IManaTrick {
 
     companion object {
-        class PieceTrickLeafDrum(spell: Spell) : PieceTrickHarvestDrum(spell) {
+        class PieceTrickLeafDrum(spell: Spell) : PieceTrickHarvestDrumKt(spell) {
             override fun effect(context: SpellContext, pos: BlockPos) {
                 ItemGrassHorn.breakGrass(context.caster.world, null, 1, pos)
             }
         }
 
-        class PieceTrickShearDrum(spell: Spell) : PieceTrickHarvestDrum(spell) {
+        class PieceTrickShearDrum(spell: Spell) : PieceTrickHarvestDrumKt(spell) {
             override fun effect(context: SpellContext, pos: BlockPos) {
                 val world = context.caster.world
 

@@ -88,6 +88,7 @@ public class LibNames {
 		public static final String MAKE_BURST = "make_mana_burst";
 		public static final String WILD_DRUM = "drum_of_the_wild";
 		public static final String CANOPY_DRUM = "drum_of_the_canopy";
+		public static final String COVERING_HORN = "horn_of_the_covering";
 		public static final String GATHERING_DRUM = "drum_of_the_gathering";
 	}
 	
