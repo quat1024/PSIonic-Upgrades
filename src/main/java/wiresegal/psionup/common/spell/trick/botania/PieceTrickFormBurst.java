@@ -15,8 +15,7 @@ import vazkii.psi.api.spell.param.ParamVector;
 import wiresegal.psionup.api.enabling.ITrickEnablerComponent;
 import wiresegal.psionup.api.enabling.PieceComponentTrick;
 import wiresegal.psionup.api.enabling.botania.IBlasterComponent;
-import wiresegal.psionup.common.lib.LibMisc;
-import wiresegal.psionup.common.lib.SpellHelpers;
+import wiresegal.psionup.common.lib.*;
 
 public class PieceTrickFormBurst extends PieceComponentTrick {
 	public PieceTrickFormBurst(Spell spell) {
@@ -31,7 +30,7 @@ public class PieceTrickFormBurst extends PieceComponentTrick {
 	@Override
 	public void initParams() {
 		positionParam = new ParamVector(SpellParam.GENERIC_NAME_POSITION, SpellParam.BLUE, false, false);
-		rayParam = new ParamVector("psi.spellparam.ray", SpellParam.GREEN, false, false);
+		rayParam = new ParamVector(LibNames.SpellParams.VAZKII_RAY, SpellParam.GREEN, false, false);
 		
 		SpellHelpers.Building.addAllParams(this, positionParam, rayParam);
 	}

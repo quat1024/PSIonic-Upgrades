@@ -12,7 +12,7 @@ import vazkii.psi.api.spell.wrapper.EntityListWrapper
  * @author WireSegal
  * Created at 10:04 PM on 7/30/16.
  */
-class PieceOperatorListSize(spell: Spell) : PieceOperator(spell) {
+class PieceOperatorListSizeKt(spell: Spell) : PieceOperator(spell) {
 
     internal lateinit var list: SpellParam
 

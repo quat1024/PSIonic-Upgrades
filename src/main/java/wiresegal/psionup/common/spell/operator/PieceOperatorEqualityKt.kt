@@ -11,7 +11,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 9:06 PM on 3/23/16.
  */
-class PieceOperatorEquality(spell: Spell) : PieceOperator(spell) {
+class PieceOperatorEqualityKt(spell: Spell) : PieceOperator(spell) {
 
     private lateinit var first: SpellParam
     private lateinit var second: SpellParam

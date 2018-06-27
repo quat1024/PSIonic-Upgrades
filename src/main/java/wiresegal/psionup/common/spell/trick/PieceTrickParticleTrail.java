@@ -5,6 +5,7 @@ import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamNumber;
 import vazkii.psi.api.spell.param.ParamVector;
 import vazkii.psi.api.spell.piece.PieceTrick;
+import wiresegal.psionup.common.lib.LibNames;
 import wiresegal.psionup.common.lib.SpellHelpers;
 
 public class PieceTrickParticleTrail extends PieceTrick {
@@ -20,7 +21,7 @@ public class PieceTrickParticleTrail extends PieceTrick {
 	@Override
 	public void initParams() {
 		positionParam = new ParamVector(SpellParam.GENERIC_NAME_POSITION, SpellParam.BLUE, false, false);
-		rayParam = new ParamVector("psi.spellparam.ray", SpellParam.GREEN, false, false);
+		rayParam = new ParamVector(LibNames.SpellParams.VAZKII_RAY, SpellParam.GREEN, false, false);
 		lengthParam = new ParamNumber(SpellParam.GENERIC_NAME_DISTANCE, SpellParam.CYAN, false, true);
 		timeParam = new ParamNumber(SpellParam.GENERIC_NAME_TIME, SpellParam.PURPLE, true, false);
 		

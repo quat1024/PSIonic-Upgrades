@@ -10,7 +10,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 9:06 PM on 3/23/16.
  */
-class PieceOperatorPlanarNorm(spell: Spell) : PieceOperator(spell) {
+class PieceOperatorPlanarNormKt(spell: Spell) : PieceOperator(spell) {
 
     internal lateinit var vec: SpellParam
 

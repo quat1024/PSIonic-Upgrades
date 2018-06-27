@@ -92,6 +92,21 @@ public class LibNames {
 		public static final String GATHERING_DRUM = "drum_of_the_gathering";
 	}
 	
+	public static class SpellErrors {
+		public static final String NON_AXIAL = LibMisc.MOD_ID + ".spellerror.nonaxial";
+	}
+	
+	public static class SpellParams {
+		public static final String TARGET_1 = LibMisc.MOD_ID + ".spellparam.target_1";
+		public static final String TARGET_2 = LibMisc.MOD_ID + ".spellparam.target_2";
+		public static final String FALLBACK = LibMisc.MOD_ID + ".spellparam.fallback";
+		public static final String AXIS = LibMisc.MOD_ID + ".spellparam.axis";
+		public static final String ANGLE = LibMisc.MOD_ID + ".spellparam.angle";
+		
+		//One Vazkii forgot, apparently.
+		public static final String VAZKII_RAY = "psi.spellparam.ray";
+	}
+	
 	public static class PieceGroups {
 		public static final String ALTERNATE_CONJURATION = LibMisc.MOD_ID + ".redstone_conjuration";
 		public static final String SECONDARY_VECTOR_OPERATORS = LibMisc.MOD_ID + ".secondary_vectors";
