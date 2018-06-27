@@ -80,7 +80,7 @@ public class ModPieces {
 						LibNames.Spell.GET_SOLIDITY,
 						LibNames.PieceGroups.BLOCK_PROPERTIES);
 		
-		register(PieceOperatorGetComparatorStrength.class,
+		register(PieceOperatorGetBlockComparatorStrength.class,
 						LibNames.Spell.GET_COMPARATOR,
 						LibNames.PieceGroups.BLOCK_PROPERTIES);
 		

@@ -18,7 +18,7 @@ import wiresegal.psionup.common.block.tile.TileCracklingStar
  * @author WireSegal
  * Created at 4:24 PM on 3/20/16.
  */
-open class PieceTrickConjureStar(spell: Spell) : PieceTrick(spell) {
+open class PieceTrickConjureStarKt(spell: Spell) : PieceTrick(spell) {
     internal lateinit var position: SpellParam
     internal lateinit var ray: SpellParam
     internal lateinit var time: SpellParam

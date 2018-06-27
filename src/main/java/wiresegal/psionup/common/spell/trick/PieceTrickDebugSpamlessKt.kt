@@ -15,7 +15,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * *         Created at 1:44 PM on 5/14/17.
  */
-class PieceTrickDebugSpamless(spell: Spell) : PieceTrick(spell) {
+class PieceTrickDebugSpamlessKt(spell: Spell) : PieceTrick(spell) {
 
     private lateinit var target: SpellParam
     private lateinit var number: SpellParam

@@ -69,7 +69,7 @@ public class SpellHelpers {
 			if(world.isRemote || !world.isBlockLoaded(pos)) return false;
 			
 			IBlockState currentState = world.getBlockState(pos);
-			if(currentState.getBlock().isReplaceable(world, pos) || currentState.getBlock().isAir(currentState, world, pos)) {
+			if(currentState != setState && (currentState.getBlock().isReplaceable(world, pos) || currentState.getBlock().isAir(currentState, world, pos))) {
 				boolean couldPlace = world.setBlockState(pos, setState); 
 				if(couldPlace && particles) world.playEvent(2001, pos, Block.getStateId(setState));
 				return couldPlace;

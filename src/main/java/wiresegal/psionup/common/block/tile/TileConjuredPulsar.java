@@ -21,6 +21,14 @@ public class TileConjuredPulsar extends TileEntity implements ITickable {
 	
 	private int particleCounter = 0;
 	
+	public void setTime(int time) {
+		this.time = time;
+	}
+	
+	public void setColorizer(ItemStack colorizer) {
+		this.colorizer = colorizer;
+	}
+	
 	@Override
 	public void update() {
 		if(world.isRemote) {			

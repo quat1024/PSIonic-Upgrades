@@ -21,7 +21,7 @@ public class PieceTrickConjurePulsar extends PieceTrick {
 		super(spell);
 	}
 	
-	private SpellParam positionParam;
+	protected SpellParam positionParam;
 	private SpellParam timeParam;
 	
 	@Override
@@ -50,15 +50,11 @@ public class PieceTrickConjurePulsar extends PieceTrick {
 		BlockPos pos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, positionParam);
 		SpellHelpers.Runtime.checkPos(context, pos);
 		
-		double time = SpellHelpers.Runtime.getNumber(this, context, timeParam, 0);
-		
+		int time = (int) SpellHelpers.Runtime.getNumber(this, context, timeParam, 0);
 		World world = context.caster.world;
-		IBlockState existingState = world.getBlockState(pos);
-		IBlockState stateToSet = getStateToSet();
 		
-		if(existingState != stateToSet) {
-			boolean couldPlace = SpellHelpers.Runtime.placeBlock(world, pos, stateToSet, false);
-			if(couldPlace) postSet(context, world, pos, time);
+		if(SpellHelpers.Runtime.placeBlock(world, pos, getStateToSet(), false)) {
+			postSet(context, world, pos, time);
 		}
 		
 		return null;
@@ -68,12 +64,12 @@ public class PieceTrickConjurePulsar extends PieceTrick {
 		return ModBlocks.conjuredPulsar.getDefaultState().withProperty(BlockConjuredPulsar.SOLID, true);
 	}
 	
-	public void postSet(SpellContext context, World world, BlockPos pos, double time) {
+	protected void postSet(SpellContext context, World world, BlockPos pos, int time) {
 		TileEntity tile = world.getTileEntity(pos);
 		if(tile instanceof TileConjuredPulsar) {
 			TileConjuredPulsar pulsar = (TileConjuredPulsar) tile;
 			if(time > 0) {
-				pulsar.setTime((int) time);
+				pulsar.setTime(time);
 			}
 			
 			ItemStack playerColorizer = FlowColorHelpers.getColorizer(PsiAPI.getPlayerCAD(context.caster));

@@ -19,6 +19,18 @@ public class TileCracklingStar extends TileEntity implements ITickable {
 	private ItemStack colorizer = ItemStack.EMPTY;
 	private Set<Vec3d> rays = new HashSet<>();
 	
+	public void setTime(int time) {
+		this.time = time;
+	}
+	
+	public void setColorizer(ItemStack colorizer) {
+		this.colorizer = colorizer;
+	}
+	
+	public void addRay(Vec3d ray) {
+		rays.add(ray);
+	}
+	
 	@Override
 	public void update() {
 		if(world.isRemote) {
