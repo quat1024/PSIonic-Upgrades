@@ -138,8 +138,8 @@ public class InventorySocketable implements IInventory {
 	public void clear() {
 		IteratorSocketable sockerator = getSockerator();
 		while(sockerator.hasNext()) {
-			int index = sockerator.next().getLeft();
-			socketable.setBulletInSocket(stack, index, ItemStack.EMPTY);
+			sockerator.next();
+			sockerator.remove();
 		}
 	}
 	

@@ -10,7 +10,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 6:10 PM on 7/15/16.
  */
-object ModBrews {
+object ModBrewsKt {
     val psishock: Brew = BrewMod(LibNames.Potions.PSISHOCK, 16000, PotionEffect(ModPotions.psishock, 300)).setNotBloodPendantInfusable()
     lateinit var psipulse: Brew
 

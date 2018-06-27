@@ -1,11 +1,10 @@
 package wiresegal.psionup.common.effect;
 
-import com.teamwizardry.librarianlib.features.base.PotionMod;
+import net.minecraft.potion.Potion;
 
 public class ModPotions {
-	//TODO: remove liblib PotionMod
-	public static PotionMod psishock;
-	public static PotionMod psipulse;
+	public static Potion psishock;
+	public static Potion psipulse;
 	
 	//TODO "potion type" whatever that is?
 	

@@ -29,19 +29,8 @@ public class IteratorSocketable implements Iterator<Pair<Integer, ItemStack>> {
 		return Pair.of(progress, socketable.getBulletInSocket(stack, progress));
 	}
 	
-	public int getIndex() {
-		return progress;
-	}
-	
-	public ItemStack getBullet() {
-		return socketable.getBulletInSocket(stack, progress);
-	}
-	
-	//TODO: Is it okay to use ItemStack.EMPTY here?
-	/*
 	@Override
 	public void remove() {
 		socketable.setBulletInSocket(stack, progress, ItemStack.EMPTY);
 	}
-	*/
 }

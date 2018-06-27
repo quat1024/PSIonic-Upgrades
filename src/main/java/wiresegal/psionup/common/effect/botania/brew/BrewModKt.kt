@@ -10,7 +10,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 9:16 PM on 5/7/16.
  */
-class BrewMod(name: String, color: Int, cost: Int, vararg effects: PotionEffect) : Brew(name, name, color, cost, *effects) {
+class BrewModKt(name: String, color: Int, cost: Int, vararg effects: PotionEffect) : Brew(name, name, color, cost, *effects) {
 
     constructor(name: String, cost: Int, vararg effects: PotionEffect) :
     this(name, PotionUtils.getPotionColorFromEffectList(listOf(*effects)), cost, *effects)

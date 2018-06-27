@@ -14,7 +14,7 @@ import vazkii.psi.common.network.message.MessageDataSync
  * @author WireSegal
  * Created at 10:01 PM on 7/13/16.
  */
-abstract class PotionPsiChange(name: String, badEffect: Boolean, color: Int) : PotionModColorized(name, badEffect, color) {
+abstract class PotionPsiChangeKt(name: String, badEffect: Boolean, color: Int) : PotionModColorized(name, badEffect, color) {
     override fun isReady(duration: Int, amplifier: Int): Boolean {
         return true
     }
