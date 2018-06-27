@@ -11,7 +11,7 @@ import wiresegal.psionup.api.ParamBlockProperties
  * @author WireSegal
  * Created at 2:29 PM on 5/13/17.
  */
-abstract class BasePieceOperatorProperties<T : Any>(spell: Spell) : PieceOperator(spell) {
+abstract class BasePieceOperatorPropertiesKt<T : Any>(spell: Spell) : PieceOperator(spell) {
     private lateinit var properties: SpellParam
 
     override fun initParams() {

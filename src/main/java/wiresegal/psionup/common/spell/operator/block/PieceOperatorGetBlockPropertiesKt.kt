@@ -14,7 +14,7 @@ import wiresegal.psionup.api.BlockProperties
  * @author WireSegal
  * Created at 2:29 PM on 5/13/17.
  */
-class PieceOperatorGetBlockProperties(spell: Spell) : PieceOperator(spell) {
+class PieceOperatorGetBlockPropertiesKt(spell: Spell) : PieceOperator(spell) {
     private lateinit var pos: SpellParam
 
     override fun initParams() {
