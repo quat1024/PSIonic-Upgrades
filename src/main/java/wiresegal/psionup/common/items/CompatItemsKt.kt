@@ -10,7 +10,7 @@ import wiresegal.psionup.common.lib.LibNames
  * @author WireSegal
  * Created at 7:25 PM on 3/31/16.
  */
-object CompatItems {
+object CompatItemsKt {
 
     var isInitialized = false
 

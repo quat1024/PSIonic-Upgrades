@@ -142,15 +142,15 @@ public class ModItems {
 		reg.register(createItem(new ItemTwinflowBattery(), LibNames.Items.UNSTABLE_BATTERY));
 		
 		if(Loader.isModLoaded("botania")) {
-			//CompatItems.init(); TODO
+			BotaniaCompatItems.register(reg);
 		}
 	}
 	
-	private static Item createItem(Item item, String name) {
+	static <I extends Item> I createItem(I item, String name) {
 		return createItem(item, name, true);
 	}
 	
-	private static Item createItem(Item item, String name, boolean showInCreative) {
+	static <I extends Item> I createItem(I item, String name, boolean showInCreative) {
 		ResourceLocation res = new ResourceLocation(LibMisc.MOD_ID, name);
 		
 		item.setRegistryName(res);
