@@ -27,7 +27,7 @@ import java.util.*
  * Created at 4:46 PM on 7/28/16.
  */
 @SideOnly(Side.CLIENT)
-class LayerGlowingWire(val renderPlayer: RenderPlayer) : LayerRenderer<AbstractClientPlayer> {
+class LayerGlowingWireKt(val renderPlayer: RenderPlayer) : LayerRenderer<AbstractClientPlayer> {
     val modelElytra = ModelElytra()
 
     fun getTexture(player: AbstractClientPlayer): ResourceLocation {

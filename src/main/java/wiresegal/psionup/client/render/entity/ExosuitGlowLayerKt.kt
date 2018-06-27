@@ -15,7 +15,7 @@ import wiresegal.psionup.common.lib.LibMisc
  * @author WireSegal
  * Created at 5:21 PM on 7/9/16.
  */
-class ExosuitGlowLayer(val renderer: RenderLivingBase<*>) : LayerBipedArmor(renderer) {
+class ExosuitGlowLayerKt(val renderer: RenderLivingBase<*>) : LayerBipedArmor(renderer) {
     override fun doRenderLayer(entitylivingbaseIn: EntityLivingBase, limbSwing: Float, limbSwingAmount: Float, partialTicks: Float, ageInTicks: Float, netHeadYaw: Float, headPitch: Float, scale: Float) {
         this.renderArmorLayer(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scale, EntityEquipmentSlot.CHEST)
         this.renderArmorLayer(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, scale, EntityEquipmentSlot.LEGS)
