@@ -1,16 +1,16 @@
 [
 {
   "modid": "psionup",
-  "name": "PSIonic Upgrades",
-  "description": "Assorted addons for PSI.",
+  "name": "PSIonic Upgrades Unofficial",
+  "description": "Still just assorted addons for PSI. Ported to 1.12 by quaternary.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["WireSegal"],
-  "credits": "Vazkii",
+  "authorList": ["WireSegal", "quaternary"],
+  "credits": "vazgoo",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": ["Psi"]
+  "dependencies": ["psi"]
 }
 ]

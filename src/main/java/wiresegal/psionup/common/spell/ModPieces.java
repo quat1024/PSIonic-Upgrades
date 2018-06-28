@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.spell;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.spell.SpellPiece;
@@ -111,7 +112,10 @@ public class ModPieces {
 	}
 	
 	static void register(Class<? extends SpellPiece> pieceClass, String name, String group, boolean main) {
-		PsiAPI.registerSpellPieceAndTexture(LibMisc.MOD_ID + "." + name, pieceClass);
+		//PsiAPI.registerSpellPieceAndTexture(LibMisc.MOD_ID + "." + name, pieceClass);
+		String key = LibMisc.MOD_ID + "." + name;
+		PsiAPI.registerSpellPiece(key, pieceClass);
+		PsiAPI.simpleSpellTextures.put(key, new ResourceLocation(LibMisc.MOD_ID, "textures/spell/" + name + ".png"));
 		PsiAPI.addPieceToGroup(pieceClass, group, main);
 		//No return value. TODO does the original actually use the return values?
 	}
