@@ -29,7 +29,7 @@ public class PsionicPacketHandler {
 	}
 	
 	public static void sendToAllNear(IMessage message, World world, BlockPos point) {
-		sendToAllWithinRange(message, world, point, 128); //TODO
+		sendToAllWithinRange(message, world, point, 128);
 	}
 	
 	public static void sendToServer(IMessage message) {

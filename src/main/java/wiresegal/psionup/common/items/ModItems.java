@@ -101,6 +101,16 @@ public class ModItems {
 	@GameRegistry.ObjectHolder(LibMisc.MOD_ID + ":" + LibNames.Items.TWINFLOW_BATTERY)
 	public static final Item twinflowBattery = Items.AIR;
 	
+	//Item Blocks
+	@GameRegistry.ObjectHolder(LibMisc.MOD_ID + ":" + LibNames.Blocks.DARK_PLATE)
+	public static final Item darkPlateItem = Items.AIR;
+	
+	@GameRegistry.ObjectHolder(LibMisc.MOD_ID + ":" + LibNames.Blocks.BRIGHT_PLATE)
+	public static final Item brightPlateItem = Items.AIR;
+	
+	@GameRegistry.ObjectHolder(LibMisc.MOD_ID + ":" + LibNames.Blocks.CAD_CASE)
+	public static final Item cadCaseItem = Items.AIR;
+	
 	public static void register(IForgeRegistry<Item> reg) {
 		//CADs and CAD Accessories
 		

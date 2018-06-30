@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -11,6 +12,7 @@ import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import wiresegal.psionup.common.block.ModBlocks;
@@ -73,14 +75,6 @@ public class PsionicUpgrades {
 		@SubscribeEvent
 		public static void sounds(RegistryEvent.Register<SoundEvent> e) {
 			PsionicSoundEvents.registerSounds(e.getRegistry());
-		}
-	}
-	
-	@Mod.EventBusSubscriber(modid = LibMisc.MOD_ID, value = Side.CLIENT)
-	public static class ClientEvents {
-		@SubscribeEvent
-		public static void blockColors(ColorHandlerEvent.Block e) {
-			ModBlocks.registerBlockColors(e.getBlockColors());
 		}
 	}
 }

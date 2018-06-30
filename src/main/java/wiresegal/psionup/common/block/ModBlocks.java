@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -14,6 +15,8 @@ import wiresegal.psionup.common.block.tile.*;
 import wiresegal.psionup.common.core.PsionicCreativeTab;
 import wiresegal.psionup.common.lib.LibMisc;
 import wiresegal.psionup.common.lib.LibNames;
+
+import java.util.Collections;
 
 public class ModBlocks {
 	
@@ -55,10 +58,5 @@ public class ModBlocks {
 		block.setUnlocalizedName(res.getResourceDomain() + "." + res.getResourcePath());
 		
 		return block;
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public static void registerBlockColors(BlockColors bc) {
-		
 	}
 }
