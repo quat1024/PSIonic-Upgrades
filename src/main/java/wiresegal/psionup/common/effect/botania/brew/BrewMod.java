@@ -11,6 +11,7 @@ public class BrewMod extends Brew {
 		super(name, name, color, cost, effects);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public BrewMod(String name, int cost, PotionEffect... effects) {
 		this(name, PotionUtils.getPotionColorFromEffectList(Arrays.asList(effects)), cost, effects);
 	}

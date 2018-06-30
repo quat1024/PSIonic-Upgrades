@@ -34,9 +34,9 @@ import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public class BlockCADCase extends BlockModButNotTheOneInLibLib {
-	public BlockCADCase(String name) {
-		super(name, Material.CLOTH);
+public class BlockCADCase extends Block {
+	public BlockCADCase() {
+		super(Material.CLOTH);
 		
 		setHardness(0.5f);
 		setSoundType(SoundType.METAL);

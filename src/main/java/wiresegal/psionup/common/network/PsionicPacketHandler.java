@@ -6,6 +6,8 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
+import wiresegal.psionup.client.core.handler.GuiHandler;
+import wiresegal.psionup.common.PsionicUpgrades;
 import wiresegal.psionup.common.lib.LibMisc;
 
 public class PsionicPacketHandler {
@@ -18,6 +20,8 @@ public class PsionicPacketHandler {
 		NET.registerMessage(MessageFlashSync.Handler.class, MessageFlashSync.class, id++, Side.SERVER);
 		NET.registerMessage(MessageParticleTrail.Handler.class, MessageParticleTrail.class, id++, Side.CLIENT);
 		NET.registerMessage(MessageSparkleSphere.Handler.class, MessageSparkleSphere.class, id++, Side.CLIENT);
+		
+		NetworkRegistry.INSTANCE.registerGuiHandler(PsionicUpgrades.INSTANCE, new GuiHandler());
 	}
 	
 	public static void sendToAllWithinRange(IMessage message, World world, BlockPos point, double range) {

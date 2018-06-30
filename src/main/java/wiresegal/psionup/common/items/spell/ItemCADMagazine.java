@@ -40,6 +40,7 @@ public class ItemCADMagazine extends Item implements IPsiAddonTool, ICadComponen
 	
 	@Override
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+		super.getSubItems(tab, items);
 		//TODO What's this about "example sockets"?
 	}
 	

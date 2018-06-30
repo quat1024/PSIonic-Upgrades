@@ -32,7 +32,7 @@ public class GuiCADMagazine extends GuiContainer {
 		return ((ContainerCADMagazine)inventorySlots).tooltipTime;
 	}
 	
-	private void decreastTooltipTime(float value) {
+	private void decreaseTooltipTime(float value) {
 		((ContainerCADMagazine)inventorySlots).tooltipTime = getTooltipTime() - value;
 	}
 	
@@ -45,6 +45,8 @@ public class GuiCADMagazine extends GuiContainer {
 	
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+		drawDefaultBackground();
+		
 		GlStateManager.color(1f, 1f, 1f);
 		
 		mc.getTextureManager().bindTexture(texture);
@@ -65,7 +67,7 @@ public class GuiCADMagazine extends GuiContainer {
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		if(getTooltipTime() > 0) {
 			GuiUtils.drawHoveringText(ImmutableList.of(TextFormatting.RED + I18n.format(getTooltipText())), -10, ySize / 2, width, height, xSize, Minecraft.getMinecraft().fontRenderer);
-			decreastTooltipTime(ClientTickHandler.ticksInGame - lastTick);
+			decreaseTooltipTime(ClientTickHandler.ticksInGame - lastTick);
 		}
 		lastTick = ClientTickHandler.ticksInGame;
 	}

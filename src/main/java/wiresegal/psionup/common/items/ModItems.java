@@ -2,11 +2,14 @@ package wiresegal.psionup.common.items;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
+import wiresegal.psionup.common.block.ModBlocks;
 import wiresegal.psionup.common.core.PsionicCreativeTab;
+import wiresegal.psionup.common.items.block.Item16Colors;
 import wiresegal.psionup.common.items.component.*;
 import wiresegal.psionup.common.items.spell.*;
 import wiresegal.psionup.common.lib.LibMisc;
@@ -129,7 +132,7 @@ public class ModItems {
 		reg.register(createItem(new ItemFlowTool.Axe(false), LibNames.Items.IVORY_AXE));
 		reg.register(createItem(new ItemFlowSword(false), LibNames.Items.IVORY_SWORD));
 		
-		//Other Stuff
+		//Misc Items
 		
 		reg.register(createItem(new ItemFlashRing(), LibNames.Items.FLASH_RING));
 		reg.register(createItem(new ItemBioticSensor(), LibNames.Items.BIOTIC_SENSOR));
@@ -139,6 +142,12 @@ public class ModItems {
 		
 		reg.register(createItem(new ItemUnstableBattery(), LibNames.Items.UNSTABLE_BATTERY));
 		reg.register(createItem(new ItemTwinflowBattery(), LibNames.Items.TWINFLOW_BATTERY));
+		
+		//Item Blocks
+		
+		reg.register(createItemBlock(new Item16Colors(ModBlocks.darkPlate)));
+		reg.register(createItemBlock(new Item16Colors(ModBlocks.brightPlate)));
+		reg.register(createItemBlock(new ItemCADCase(ModBlocks.cadCase)));
 		
 		if(Loader.isModLoaded("botania")) {
 			BotaniaCompatItems.register(reg);
@@ -158,5 +167,19 @@ public class ModItems {
 		if(showInCreative) item.setCreativeTab(PsionicCreativeTab.INST);
 		
 		return item;
+	}
+	
+	static <IB extends ItemBlock> IB createItemBlock(IB itemBlock) {
+		return createItemBlock(itemBlock, true);
+	}
+	
+	static <IB extends ItemBlock> IB createItemBlock(IB itemBlock, boolean showInCreative) {
+		ResourceLocation res = itemBlock.getBlock().getRegistryName();
+		
+		itemBlock.setRegistryName(res);
+		
+		if(showInCreative) itemBlock.setCreativeTab(PsionicCreativeTab.INST);
+		
+		return itemBlock;
 	}
 }

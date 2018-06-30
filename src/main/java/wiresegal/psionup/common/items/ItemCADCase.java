@@ -16,12 +16,13 @@ import wiresegal.psionup.client.core.handler.GuiHandler;
 import wiresegal.psionup.common.PsionicUpgrades;
 import wiresegal.psionup.common.block.tile.TileCADCase;
 import wiresegal.psionup.common.core.PsionicSoundEvents;
+import wiresegal.psionup.common.items.block.Item16Colors;
 import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class ItemCADCase extends ItemBlock {
+public class ItemCADCase extends Item16Colors {
 	public ItemCADCase(Block block) {
 		super(block);
 		

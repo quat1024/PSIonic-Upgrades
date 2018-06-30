@@ -9,6 +9,7 @@ import wiresegal.psionup.client.gui.flashring.GuiFlashRing;
 import wiresegal.psionup.common.block.BlockCADCase;
 import wiresegal.psionup.common.gui.cadcase.ContainerCADCase;
 import wiresegal.psionup.common.gui.magazine.ContainerCADMagazine;
+import wiresegal.psionup.common.gui.magazine.GuiCADMagazine;
 import wiresegal.psionup.common.items.spell.ItemCADMagazine;
 import wiresegal.psionup.common.items.spell.ItemFlashRing;
 
@@ -50,7 +51,7 @@ public class GuiHandler implements IGuiHandler {
 			
 			case GUI_MAGAZINE: {
 				ItemStack stack = getStack(player, ItemCADMagazine.class);
-				if(!stack.isEmpty()) return new ContainerCADMagazine(player, stack);
+				if(!stack.isEmpty()) return new GuiCADMagazine(player, stack);
 			}
 			
 			case GUI_FLASH_RING: {

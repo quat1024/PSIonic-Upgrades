@@ -9,6 +9,8 @@ import net.minecraft.entity.player.EnumPlayerModelParts;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import wiresegal.psionup.client.core.handler.HUDHandler;
 import wiresegal.psionup.client.render.entity.ExosuitGlowLayer;
 import wiresegal.psionup.client.render.entity.LayerGlowingWire;
@@ -25,14 +27,6 @@ public class ClientProxy extends CommonProxy {
 		
 		//Don't use SubscribeEvent because I've had some problems when combining it with SideOnly in the past
 		MinecraftForge.EVENT_BUS.register(HUDHandler.class);
-		
-		//HUDHandler.init();
-		
-		/*
-		 GlowingHandler.registerCustomGlowHandler(PsiItems.cad, {
-            _, model -> IGlowingItem.Helper.wrapperBake(model, false, 1, 2)
-        }) { _, _ -> true }
-		 */
 	}
 	
 	@Override

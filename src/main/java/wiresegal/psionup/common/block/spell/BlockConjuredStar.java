@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.block.spell;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -10,14 +11,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import wiresegal.psionup.common.block.BlockModButNotTheOneInLibLib;
 import wiresegal.psionup.common.block.tile.TileCracklingStar;
 
 import javax.annotation.Nullable;
 
-public class BlockConjuredStar extends BlockModButNotTheOneInLibLib {
-	public BlockConjuredStar(String name) {
-		super(name, Material.GLASS, MapColor.AIR);
+public class BlockConjuredStar extends Block {
+	public BlockConjuredStar() {
+		super(Material.GLASS, MapColor.AIR);
 		
 		setLightLevel(1f);
 		setSoundType(SoundType.CLOTH);

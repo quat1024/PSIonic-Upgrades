@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.block.spell;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -16,15 +17,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import vazkii.psi.common.block.BlockConjured;
-import wiresegal.psionup.common.block.BlockModButNotTheOneInLibLib;
 import wiresegal.psionup.common.block.tile.TileConjuredPulsar;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
-public class BlockConjuredPulsar extends BlockModButNotTheOneInLibLib {
-	public BlockConjuredPulsar(String name) {
-		super(name, Material.GLASS, MapColor.AIR);
+public class BlockConjuredPulsar extends Block {
+	public BlockConjuredPulsar() {
+		super(Material.GLASS, MapColor.AIR);
 		
 		setLightOpacity(0);
 		disableStats();

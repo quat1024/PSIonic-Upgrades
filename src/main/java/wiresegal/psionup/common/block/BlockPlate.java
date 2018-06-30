@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -13,9 +14,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockPlate extends BlockModButNotTheOneInLibLib {
-	public BlockPlate(String registryName) {
-		super(registryName, Material.IRON);
+public class BlockPlate extends Block {
+	public BlockPlate() {
+		super(Material.IRON);
 		
 		setLightLevel(1f);
 		setHardness(5f);

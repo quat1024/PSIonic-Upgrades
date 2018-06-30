@@ -34,11 +34,10 @@ public class ItemBlasterAssembly extends ItemComponent implements IBlasterCompon
 		vazkii.psi.common.item.base.ModItems.cad.addPropertyOverride(new ResourceLocation(LibMisc.MOD_ID, "clip"), ((stack, world, ent) -> ItemManaGun.hasClip(stack) ? 1f : 0f));
 	}
 	
-	//TODO this gay
 	@SideOnly(Side.CLIENT)
 	@Override
 	public ModelResourceLocation getCADModel(ItemStack itemStack, ItemStack itemStack1) {
-		return new ModelResourceLocation("minecraft:stone"); //TODO
+		return new ModelResourceLocation(new ResourceLocation(LibMisc.MOD_ID, "cad_blaster"), "inventory");
 	}
 	
 	@Override
