@@ -22,6 +22,7 @@ import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.item.ItemCAD;
 import vazkii.psi.common.item.base.ModItems;
 import vazkii.psi.common.item.tool.ItemPsimetalTool;
+import wiresegal.psionup.client.core.ClientHelpers;
 import wiresegal.psionup.common.core.helper.flowcolors.FlowColorHelpers;
 import wiresegal.psionup.common.lib.ItemNBTHelpers;
 import wiresegal.psionup.common.lib.LibMisc;
@@ -107,7 +108,16 @@ public abstract class ItemFlowExosuit extends ItemArmor implements IPsiAddonTool
 		} else return "psi:textures/model/psimetal_exosuit_sensor.png";
 	}
 	
-	//TODO :thinking:
+	@SideOnly(Side.CLIENT)
+	public int getItemColor(ItemStack stack, int layer) {
+		if(layer == 0) {
+			return ClientHelpers.getFlowColor(stack);
+		} else if (layer == 1) {
+			return getColor(stack);
+		} else return 0xFFFFFF;
+	}
+	
+	/*
 	@Override
 	public boolean hasColor(ItemStack stack) {
 		return true;
@@ -116,7 +126,7 @@ public abstract class ItemFlowExosuit extends ItemArmor implements IPsiAddonTool
 	@Override
 	public int getColor(ItemStack stack) {
 		return ICADColorizer.DEFAULT_SPELL_COLOR;
-	}
+	}*/
 	
 	@SideOnly(Side.CLIENT)
 	@Nullable

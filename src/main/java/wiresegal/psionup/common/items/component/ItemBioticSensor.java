@@ -9,6 +9,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import vazkii.psi.api.exosuit.IExosuitSensor;
 import vazkii.psi.api.exosuit.PsiArmorEvent;
 import vazkii.psi.client.core.handler.ClientTickHandler;
@@ -33,12 +35,10 @@ public class ItemBioticSensor extends Item implements IExosuitSensor {
 		return EVENT_BIOTIC;
 	}
 	
-	//TODO Item colors
-	
 	@Override
-	public int getColor(ItemStack itemStack) {
+	public int getColor(ItemStack stack) {
 		byte add = (byte) Math.max(Math.sin(ClientTickHandler.ticksInGame * 0.1d) * 96, 0);
-		return (add << 16) | (add << 8) | add; 
+		return (add << 16) | (add << 8) | add;
 	}
 	
 	//TODO this feels messy
