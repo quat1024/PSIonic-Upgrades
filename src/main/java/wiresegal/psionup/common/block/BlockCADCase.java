@@ -19,8 +19,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.fml.relauncher.Side;
@@ -63,8 +63,6 @@ public class BlockCADCase extends Block {
 		return new BlockStateContainer(this, OPEN, FACING, COLOR);
 	}
 	
-	//TODO: Statemapper to ignore Color
-	
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return state.getValue(FACING).getHorizontalIndex() | (state.getValue(OPEN) ? 4 : 0);
@@ -79,10 +77,16 @@ public class BlockCADCase extends Block {
 	
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
-		TileEntity tile = world.getTileEntity(pos);
+		TileEntity tile;
+		if(world instanceof ChunkCache) {
+			tile = ((ChunkCache)world).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK);
+		} else {
+			tile = world.getTileEntity(pos);
+		}
+		
 		if(tile instanceof TileCADCase) {
 			TileCADCase cadCase = (TileCADCase) tile;
-			return state.withProperty(COLOR, cadCase.getDyeColor()); //TODO store the dye color on the tile, not its index
+			return state.withProperty(COLOR, cadCase.getDyeColor());
 		} else return state;
 	}
 	
@@ -91,7 +95,7 @@ public class BlockCADCase extends Block {
 		return false;
 	}
 	
-	//There is an "isBlockSolid"; what does it do?
+	//There was an "isBlockSolid"; what does it do?
 	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
@@ -116,14 +120,21 @@ public class BlockCADCase extends Block {
 	
 	//Item form
 	
-	//TODO createItemForm (point to a different item and do capabilities there)
-	
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 		return new ItemStack(this, 1, getActualState(state, world, pos).getValue(COLOR).getMetadata());
 	}
 	
+	@Override
+	public int damageDropped(IBlockState state) {
+		return state.getValue(COLOR).getMetadata();
+	}
+	
 	//Tile Entity
+	@Override
+	public boolean hasTileEntity(IBlockState state) {
+		return true;
+	}
 	
 	@Nullable
 	@Override
@@ -238,7 +249,4 @@ public class BlockCADCase extends Block {
 			}
 		}
 	}
-	
-	//TODO BlockColors
-	//TODO ItemColors (on the item)
 }

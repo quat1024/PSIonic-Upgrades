@@ -92,7 +92,7 @@ public class ClientProxy extends CommonProxy {
 				if(layer == 1) {
 					return EnumDyeColor.byMetadata(stack.getMetadata()).getColorValue();
 				} else return 0xFFFFFF;
-			}, ModItems.brightPlateItem, ModItems.darkPlateItem);
+			}, ModItems.brightPlateItem, ModItems.darkPlateItem, ModItems.cadCaseItem);
 			
 			ic.registerItemColorHandler((stack, layer) -> {
 				if(layer == 1) {

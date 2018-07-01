@@ -4,6 +4,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -30,7 +32,7 @@ public class TileCADCase extends TileEntity {
 		}
 	};
 	
-	EnumDyeColor color = EnumDyeColor.WHITE;
+	EnumDyeColor color;
 	String name = "";
 	
 	public EnumDyeColor getDyeColor() {
@@ -130,6 +132,34 @@ public class TileCADCase extends TileEntity {
 		itemHandler.deserializeNBT(nbt.getCompoundTag("Items"));
 		name = nbt.getString("Name");
 		color = EnumDyeColor.byMetadata(nbt.getInteger("Color"));
+	}
+	
+	@Nullable
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		return new SPacketUpdateTileEntity(pos, 0, getUpdateTag());
+	}
+	
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		return writeToNBT(new NBTTagCompound());
+	}
+	
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		readFromNBT(pkt.getNbtCompound());
+		notifyBlockUpdate();
+	}
+	
+	private void notifyBlockUpdate() {
+		IBlockState state = world.getBlockState(pos);
+		world.notifyBlockUpdate(pos, state, state, 3);
+	}
+	
+	@Override
+	public void markDirty() {
+		super.markDirty();
+		notifyBlockUpdate();
 	}
 	
 	//Thanks mojang
