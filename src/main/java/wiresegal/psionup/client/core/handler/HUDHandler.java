@@ -38,7 +38,7 @@ public class HUDHandler {
 	private static ResourceLocation psiBarMaskLocation = new ResourceLocation(LibResources.GUI_PSI_BAR_MASK);
 	private static ResourceLocation psiBarShatterLocation = new ResourceLocation(LibResources.GUI_PSI_BAR_SHATTER);
 	
-	private static int secondaryTextureUnit = 7; //TODO Dafuq
+	private static int secondaryTextureUnit = 7;
 	private static boolean registeredMask = false;
 	
 	private static void drawPsiBar(ScaledResolution res, float partialTicks) {
@@ -229,7 +229,7 @@ public class HUDHandler {
 			OpenGlHelper.setActiveTexture(ARBMultitexture.GL_TEXTURE0_ARB + secondaryTextureUnit);
 			
 			GlStateManager.enableTexture2D();
-			GL11.glGetInteger(GL11.GL_TEXTURE_BINDING_2D); //TODO dangling getter?
+			//GL11.glGetInteger(GL11.GL_TEXTURE_BINDING_2D); //TODO dangling getter?
 			
 			GL11.glBindTexture(GL11.GL_TEXTURE_2D, mc.renderEngine.getTexture(shatter ? psiBarShatterLocation : psiBarMaskLocation).getGlTextureId());
 			ARBShaderObjects.glUniform1iARB(maskUniform, secondaryTextureUnit);

@@ -14,8 +14,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
@@ -95,8 +94,6 @@ public class BlockCADCase extends Block {
 		return false;
 	}
 	
-	//There was an "isBlockSolid"; what does it do?
-	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
@@ -123,11 +120,6 @@ public class BlockCADCase extends Block {
 	@Override
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 		return new ItemStack(this, 1, getActualState(state, world, pos).getValue(COLOR).getMetadata());
-	}
-	
-	@Override
-	public int damageDropped(IBlockState state) {
-		return state.getValue(COLOR).getMetadata();
 	}
 	
 	//Tile Entity
@@ -158,7 +150,10 @@ public class BlockCADCase extends Block {
 		} else return 0;
 	}
 	
-	//TODO getDrops
+	@Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+		super.getDrops(drops, world, pos, state, fortune);
+	}
 	
 	//Events
 	
@@ -196,6 +191,15 @@ public class BlockCADCase extends Block {
 	}
 	
 	@Override
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		TileEntity tile = world.getTileEntity(pos);
+		if(tile instanceof TileCADCase) {
+			return ((TileCADCase)tile).whenClicked(state, player, hand, hitX, hitZ);
+		}
+		return false;
+	}
+	
+	@Override
 	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighbor, BlockPos neighborPos) {
 		if(world.isRemote) return;
 		
@@ -209,10 +213,6 @@ public class BlockCADCase extends Block {
 			}
 		} else {
 			world.destroyBlock(pos, true);
-			/*
-			dropBlockAsItem(world, pos, state, 0); //TODO does this help, or is destroyBlock ok?
-			world.setBlockToAir(pos);
-			*/
 		}
 	}
 	

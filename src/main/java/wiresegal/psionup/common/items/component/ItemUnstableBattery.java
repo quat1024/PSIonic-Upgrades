@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.*;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
+import wiresegal.psionup.common.effect.base.PotionPsiChange;
 import wiresegal.psionup.common.items.base.ItemComponent;
 import wiresegal.psionup.common.lib.LibMisc;
 
@@ -70,7 +71,7 @@ public class ItemUnstableBattery extends ItemComponent {
 			if(!battery.isEmpty() && battery.getItem() instanceof ItemUnstableBattery) {
 				PlayerDataHandler.PlayerData data = PlayerDataHandler.get(player);
 				if(data.regenCooldown == 0 && data.availablePsi != data.getTotalPsi()) {
-					//PotionPsiChange.Companion.addPsiToPlayer(player, PSI_REGEN_BONUS, true); //TODO this points at Kotlin
+					PotionPsiChange.changePsi(player, PSI_REGEN_BONUS, true);
 				}
 			}
 		}

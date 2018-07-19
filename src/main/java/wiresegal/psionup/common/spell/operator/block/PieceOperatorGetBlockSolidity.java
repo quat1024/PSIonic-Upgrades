@@ -18,7 +18,6 @@ public class PieceOperatorGetBlockSolidity extends BasePieceOperatorBlockPropert
 	public void initParams() {
 		super.initParams();
 		
-		//TODO Should it be optional?
 		axisParam = new ParamVector(LibNames.SpellParams.VAZKII_RAY, SpellParam.BLUE, false, false);
 		addParam(axisParam);
 	}

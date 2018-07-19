@@ -2,12 +2,14 @@ package wiresegal.psionup.common.items.component;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.*;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
+import wiresegal.psionup.common.effect.base.PotionPsiChange;
 import wiresegal.psionup.common.items.base.ItemComponent;
 import wiresegal.psionup.common.lib.LibMisc;
 
@@ -48,8 +50,8 @@ public class ItemTwinflowBattery extends ItemComponent {
 				PlayerDataHandler.PlayerData data = PlayerDataHandler.get(player);
 				
 				if(data.regenCooldown == 0) {
-					//TODO
-					//PotionPsiChange.addPsiToPlayer(player, PSI_REGEN_BONUS + if (data.availablePsi != data.totalPsi) Math.ceil(data.regenPerTick / 2.0).toInt() else 0, false)
+					int changeAmount = PSI_REGEN_BONUS + data.availablePsi != data.getTotalPsi() ? MathHelper.ceil(data.getRegenPerTick() / 2) : 0;
+					PotionPsiChange.changePsi(player, changeAmount, false); //TODO why not send a packet?
 				}
 				
 				int psiToDump = Math.min(data.getTotalPsi() - data.availablePsi, icad.getStoredPsi(cad));

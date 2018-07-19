@@ -31,8 +31,6 @@ public class ItemFlowSword extends ItemSword implements IPsiAddonTool {
 	final boolean ebony;
 	
 	//TODO liblib glow
-	//TODO item colors
-	
 	
 	@Override
 	public boolean hitEntity(ItemStack sword, EntityLivingBase target, EntityLivingBase attacker) {

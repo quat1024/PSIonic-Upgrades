@@ -19,6 +19,8 @@ import vazkii.psi.common.Psi;
 import vazkii.psi.common.core.handler.PsiSoundHandler;
 import wiresegal.psionup.common.effect.ModPotions;
 import wiresegal.psionup.common.items.ModItems;
+import wiresegal.psionup.common.network.MessageSparkleSphere;
+import wiresegal.psionup.common.network.PsionicPacketHandler;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -154,8 +156,7 @@ public class EntityGaussPulse extends EntityThrowable {
 				player.addPotionEffect(new PotionEffect(ModPotions.psishock, ammo == AmmoStatus.NOTAMMO ? 100 : 25));
 			}
 			
-			//TODO: Sparkle sphere packet (used liblib's network channel)
-			//PacketHandler.NETWORK.sendToAllAround(MessageSparkleSphere(positionVector, ammo), world, positionVector, 128.0)
+			PsionicPacketHandler.sendToAllWithinRange(new MessageSparkleSphere(getPositionVector(), ammo), world, getPosition(), 128.0);
 		} else if(ammo == AmmoStatus.AMMO) {
 			EntityItem itemEnt = new EntityItem(world, posX, posY, posZ, new ItemStack(ModItems.gaussBullet));
 			Vector3 itemVelVec = new Vector3(motionX, motionY, motionZ).normalize().multiply(1 / 4.5d);

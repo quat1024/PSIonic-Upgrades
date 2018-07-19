@@ -29,8 +29,6 @@ public class ItemCADCase extends Item16Colors {
 		setMaxStackSize(1);
 	}
 	
-	//TODO item colors or whatever this mesh definition liblib thingie is
-	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		if(!world.isRemote) {

@@ -45,7 +45,7 @@ public class PieceTrickConjurePulsar extends PieceTrick {
 	
 	@Override
 	public Object execute(SpellContext context) throws SpellRuntimeException {
-		if(context.caster.world.isRemote) return null; //TODO copy to other spells?
+		if(context.caster.world.isRemote) return null;
 		
 		BlockPos pos = SpellHelpers.Runtime.getBlockPosFromVectorParam(this, context, positionParam);
 		SpellHelpers.Runtime.checkPos(context, pos);

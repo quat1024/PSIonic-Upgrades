@@ -3,6 +3,7 @@ package wiresegal.psionup.common.core;
 import net.minecraftforge.fml.common.event.*;
 import wiresegal.psionup.common.effect.ModPotions;
 import wiresegal.psionup.common.entity.ModEntities;
+import wiresegal.psionup.common.lib.PlayerDataHelpers;
 import wiresegal.psionup.common.network.PsionicPacketHandler;
 import wiresegal.psionup.common.spell.ModPieces;
 
@@ -34,6 +35,6 @@ public class CommonProxy {
 	}
 	
 	public void post(FMLPostInitializationEvent e) {
-		//No-op
+		PlayerDataHelpers.readGroups();
 	}
 }

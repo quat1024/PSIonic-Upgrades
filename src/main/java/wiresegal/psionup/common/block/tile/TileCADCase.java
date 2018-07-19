@@ -51,8 +51,9 @@ public class TileCADCase extends TileEntity {
 		this.name = name;
 	}
 	
-	public boolean whenClicked(IBlockState clickedState, EntityPlayer player, EnumHand hand, ItemStack heldStack, float hitX, float hitZ) {
+	public boolean whenClicked(IBlockState clickedState, EntityPlayer player, EnumHand hand, float hitX, float hitZ) {
 		EnumFacing facing = clickedState.getValue(BlockCADCase.FACING);
+		ItemStack heldStack = player.getHeldItem(hand);
 		
 		int slot = getSlot(facing, hitX, hitZ);
 		ItemStack stackInSlot = itemHandler.getStackInSlot(slot);

@@ -121,6 +121,4 @@ public class ItemLiquidColorizer extends ItemComponent implements ICADColorizer,
 	public boolean acceptsPiece(@Nonnull ItemStack stack, @Nonnull EnumCADComponent type) {
 		return type == EnumCADComponent.DYE;
 	}
-	
-	//TODO item color
 }

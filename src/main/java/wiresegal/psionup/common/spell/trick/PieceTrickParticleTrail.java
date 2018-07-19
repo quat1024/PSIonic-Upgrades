@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.spell.trick;
 
+import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.internal.Vector3;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamNumber;
@@ -7,6 +8,8 @@ import vazkii.psi.api.spell.param.ParamVector;
 import vazkii.psi.api.spell.piece.PieceTrick;
 import wiresegal.psionup.common.lib.LibNames;
 import wiresegal.psionup.common.lib.SpellHelpers;
+import wiresegal.psionup.common.network.MessageParticleTrail;
+import wiresegal.psionup.common.network.PsionicPacketHandler;
 
 public class PieceTrickParticleTrail extends PieceTrick {
 	public PieceTrickParticleTrail(Spell spell) {
@@ -52,9 +55,7 @@ public class PieceTrickParticleTrail extends PieceTrick {
 		}
 		
 		if(!context.caster.world.isRemote) {
-			//TODO: particle trail packet using own network channel
-			//TODO: Also is it ok to move this isRemote check earlier? seems wasteful when this trick does nothing clientside
-			//PacketHandler.NETWORK.sendToDimension(MessageParticleTrail(pos.toVec3D(), dir.toVec3D(), len, time.toInt(), PsiAPI.getPlayerCAD(context.caster)), context.caster.world.provider.dimension)
+			PsionicPacketHandler.NET.sendToDimension(new MessageParticleTrail(pos.toVec3D(), dir.toVec3D(), length, (int) time, PsiAPI.getPlayerCAD(context.caster)), context.caster.world.provider.getDimension());
 		}
 		
 		return null;

@@ -6,7 +6,7 @@ public class ModPotions {
 	public static Potion psishock;
 	public static Potion psipulse;
 	
-	//TODO "potion type" whatever that is?
+	//TODO brewing recipes!
 	
 	public static void init() {
 		psishock = new PotionPsishock();

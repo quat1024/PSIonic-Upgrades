@@ -1,11 +1,14 @@
 package wiresegal.psionup.common.items.component.botania;
 
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -24,7 +27,9 @@ import wiresegal.psionup.common.items.base.ItemComponent;
 import wiresegal.psionup.common.lib.LibMisc;
 import wiresegal.psionup.common.lib.QuatMiscHelpers;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ItemBlasterAssembly extends ItemComponent implements IBlasterComponent {
 	public ItemBlasterAssembly() {
@@ -70,9 +75,45 @@ public class ItemBlasterAssembly extends ItemComponent implements IBlasterCompon
 		return EnableResult.NOT_ENABLED;
 	}
 	
+	private static final Pattern advancedMatcher = Pattern.compile("\\s+(?=\\(#\\d+\\))");
+	
 	@SubscribeEvent
 	public static void tooltip(ItemTooltipEvent e) {
-		//TODO
+		ItemStack stack = e.getItemStack();
+		Item item = stack.getItem();
+		
+		if(!(item instanceof ICAD)) return;
+		ICAD icad = (ICAD) item;
+			
+		ItemStack assemblyStack = icad.getComponentInSlot(e.getItemStack(), EnumCADComponent.ASSEMBLY);
+		if(assemblyStack.isEmpty() || !(assemblyStack.getItem() instanceof IBlasterComponent)) return;
+		
+		ItemStack lens = ItemManaGun.getLens(stack);
+		if(!lens.isEmpty()) {
+			String itemName = e.getToolTip().get(0);
+			
+			//Wtf is going on
+			if(e.getFlags().isAdvanced()) {
+				StringBuilder joined = new StringBuilder();
+				String[] match = advancedMatcher.split(itemName);
+				if(match.length > 1) {
+					for(int i = 1; i < match.length; i++) {
+						if(i != 1) joined.append(' ');
+						joined.append(match[i]);
+					}
+				}
+				
+				itemName = match[0].trim() + ' ' + TextFormatting.RESET + '(' + TextFormatting.GREEN + lens.getDisplayName() + TextFormatting.RESET + ' ' + joined.toString();
+			}
+			
+			if(GuiScreen.isShiftKeyDown()) {
+				List<String> gunTooltip = new ArrayList<>();
+				vazkii.botania.common.item.ModItems.manaGun.addInformation(stack, e.getEntityPlayer().world, gunTooltip, e.getFlags());
+				e.getToolTip().addAll(2, gunTooltip);
+			}
+			
+			e.getToolTip().set(0, itemName);
+		}
 	}
 	
 	@SubscribeEvent

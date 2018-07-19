@@ -29,7 +29,7 @@ public class FlowColorHelpers {
 				clearColorizer(player);
 			} else {
 				ItemStack colorizer = ((ICAD)cad.getItem()).getComponentInSlot(cad, EnumCADComponent.DYE);
-				//TODO: Is this a failsafe, or a "default"?
+				
 				if(colorizer.isEmpty()) colorizer = new ItemStack(ModItems.liquidColorizer);
 				applyColorizer(player, colorizer);
 			}
@@ -38,7 +38,6 @@ public class FlowColorHelpers {
 	
 	private static final String TAG_FLOW_COLOR = "FlowColor";
 	
-	//TODO rename these to "colorizer"
 	public static void applyColorizer(EntityPlayer player, ItemStack color) {
 		for(int i = 0; i < player.inventory.getSizeInventory(); i++) {
 			ItemStack slot = player.inventory.getStackInSlot(i);

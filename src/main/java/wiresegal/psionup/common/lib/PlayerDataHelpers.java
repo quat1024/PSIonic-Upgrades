@@ -14,12 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerDataHelpers {
-	public static final List<String> allGroupNames;
+	public static final List<String> allGroupNames = new ArrayList<>();
 	public static final String level0Name = "psidust";
 	
-	static {
-		//TODO static init feels too early/fragile/classloady but a named init method feels too overkill
-		allGroupNames = new ArrayList<>();
+	public static void readGroups() {
+		allGroupNames.clear();
 		allGroupNames.addAll(PsiAPI.groupsForName.keySet());
 		allGroupNames.add(PlayerDataHelpers.level0Name);
 	}

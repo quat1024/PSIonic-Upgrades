@@ -75,7 +75,6 @@ public abstract class ItemFlowTool extends ItemTool implements IPsiAddonTool, IF
 	}
 	
 	//TODO liblib item glow stuff
-	//TODO item colors
 	
 	@Override
 	public boolean onBlockStartBreak(ItemStack stack, BlockPos pos, EntityPlayer player) {

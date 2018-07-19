@@ -25,7 +25,7 @@ public class PieceOperatorGetBlockProperties extends PieceOperator {
 	public Object execute(SpellContext context) throws SpellRuntimeException {
 		Vector3 positionVec = getParamValue(context, positionParam);
 		BlockPos position = new BlockPos(positionVec.toVec3D());
-		World world = context.caster.world; //TODO original uses focalPoint, is that better or worse?
+		World world = context.focalPoint.world;
 		if(!context.isInRadius(positionVec)) {
 			throw new SpellRuntimeException(SpellRuntimeException.OUTSIDE_RADIUS);
 		}

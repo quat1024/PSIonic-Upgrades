@@ -21,7 +21,6 @@ public class ItemFakeCAD extends Item implements IPsiAddonTool {
 	}
 	
 	//TODO Liblib glow
-	//TODO Item colors
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {

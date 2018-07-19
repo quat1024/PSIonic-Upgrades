@@ -23,7 +23,6 @@ public class PieceTrickBreakLoop extends PieceTrick {
 	
 	@Override
 	public void addToMetadata(SpellMetadata meta) throws SpellCompilationException, ArithmeticException {
-		super.addToMetadata(meta); //different from original, TODO do simple tricks like this in Psi also skip super? was it intentional?
 		meta.addStat(EnumSpellStat.COMPLEXITY, 1);
 	}
 	

@@ -58,8 +58,6 @@ public class BlockConjuredPulsar extends Block {
 		return new BlockStateContainer(this, SOLID, LIGHT, BLOCK_UP, BLOCK_DOWN, BLOCK_NORTH, BLOCK_SOUTH, BLOCK_EAST, BLOCK_WEST);
 	}
 	
-	//TODO statemapper
-	
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return (state.getValue(SOLID) ? 1 : 0) | (state.getValue(LIGHT) ? 2 : 0);
@@ -129,12 +127,19 @@ public class BlockConjuredPulsar extends Block {
 		return state.getValue(LIGHT) ? 15 : 0;
 	}
 	
+	/*
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
 		if(state.getValue(SOLID)) {
 			addCollisionBoxToList(pos, entityBox, collidingBoxes, FULL_BLOCK_AABB);
 		}
 		//TODO Can I override getCollisionBoundingBox instead? Or is that like, cached somewhere
+	}*/
+	
+	@Nullable
+	@Override
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
+		return state.getValue(SOLID) ? FULL_BLOCK_AABB : NULL_AABB;
 	}
 	
 	@SideOnly(Side.CLIENT)

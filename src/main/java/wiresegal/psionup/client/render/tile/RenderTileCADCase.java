@@ -30,7 +30,7 @@ public class RenderTileCADCase extends TileEntitySpecialRenderer<TileCADCase> {
 		
 		GlStateManager.pushMatrix();
 		GlStateManager.enableBlend();
-		GlStateManager.enableRescaleNormal(); //TODO This is enabled but isn't disabled, does it leak?
+		GlStateManager.enableRescaleNormal();
 		GlStateManager.translate(x, y, z);
 		
 		//mega oof TODO can this be cleaned up
@@ -60,8 +60,5 @@ public class RenderTileCADCase extends TileEntitySpecialRenderer<TileCADCase> {
 		GlStateManager.disableBlend();
 		GlStateManager.enableRescaleNormal();
 		GlStateManager.popMatrix();
-		
-		//TODO: would it be funny to rename these? this draws name tags
-		//super.render(cadCase, x, y, z, partialTicks, destroyStage, alpha);
 	}
 }

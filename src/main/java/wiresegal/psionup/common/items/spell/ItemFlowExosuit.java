@@ -39,7 +39,6 @@ public abstract class ItemFlowExosuit extends ItemArmor implements IPsiAddonTool
 	final boolean ebony;
 	
 	//TODO liblib glow
-	//TODO item colors
 	
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armorPiece) {

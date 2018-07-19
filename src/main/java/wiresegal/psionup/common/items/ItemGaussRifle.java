@@ -25,7 +25,6 @@ public class ItemGaussRifle extends Item implements IFlowColorAcceptor {
 	private static final int PSI_COST_WITH_AMMO = 200;
 	
 	//TODO this liblib glowing item shit, reimplement that somehow
-	//TODO iitemcolor
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {

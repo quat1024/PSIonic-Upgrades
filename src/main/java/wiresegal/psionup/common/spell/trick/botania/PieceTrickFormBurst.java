@@ -2,9 +2,11 @@ package wiresegal.psionup.common.spell.trick.botania;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import vazkii.botania.api.mana.*;
+import vazkii.botania.common.core.handler.ModSounds;
 import vazkii.botania.common.entity.EntityManaBurst;
 import vazkii.botania.common.item.ItemManaGun;
 import vazkii.psi.api.PsiAPI;
@@ -67,11 +69,8 @@ public class PieceTrickFormBurst extends PieceComponentTrick {
 		
 		EntityManaBurst burst = formBurst(posVec, rayVec, player.world, PsiAPI.getPlayerCAD(context.caster));
 		
-		//TODO earlier isRemote check?
-		
 		if(!player.world.isRemote) {
-			//TODO what happened to Botania sound events? They are different now 
-			//player.world.playSound();
+			player.world.playSound(null, player.posX, player.posY, player.posZ, ModSounds.manaBlaster, SoundCategory.PLAYERS, .6f, 1f);
 			
 			player.world.spawnEntity(burst);
 		}
