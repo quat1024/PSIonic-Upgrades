@@ -168,7 +168,6 @@ public class HUDHandler {
 		
 		if(shaders) {
 			OpenGlHelper.setActiveTexture(ARBMultitexture.GL_TEXTURE0_ARB + secondaryTextureUnit);
-			//todo WEE WOO WEE WOO where is your GLSTATEMANAGER
 			GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture);
 			OpenGlHelper.setActiveTexture(ARBMultitexture.GL_TEXTURE0_ARB);
 		}

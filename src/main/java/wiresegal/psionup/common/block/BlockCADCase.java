@@ -20,12 +20,9 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.*;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.*;
 import wiresegal.psionup.common.block.tile.TileCADCase;
 import wiresegal.psionup.common.core.PsionicSoundEvents;
 
@@ -51,9 +48,6 @@ public class BlockCADCase extends Block {
 	private static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.5 / 16.0, 0.0, 3.5 / 16.0, 15.5 / 16.0, 4.5 / 16.0, 12.5 / 16.0);
 	private static final AxisAlignedBB EAST_AABB = new AxisAlignedBB(3.5 / 16.0, 0.0, 0.5 / 16.0, 12.5 / 16.0, 4.5 / 16.0, 15.5 / 16.0);
 	private static final AxisAlignedBB SOUTH_AABB = new AxisAlignedBB(0.5 / 16.0, 0.0, 3.5 / 16.0, 15.5 / 16.0, 4.5 / 16.0, 12.5 / 16.0);
-	
-	@CapabilityInject(IItemHandler.class)
-	public static final Capability<IItemHandler> ITEM_HANDLER_CAPABILITY = null;
 	
 	//Block Properties and State
 	
@@ -144,7 +138,7 @@ public class BlockCADCase extends Block {
 		TileEntity tile = world.getTileEntity(pos);
 		if(tile instanceof TileCADCase) {
 			TileCADCase cadCase = (TileCADCase) tile;
-			IItemHandler handler = cadCase.getCapability(ITEM_HANDLER_CAPABILITY, null);
+			IItemHandler handler = cadCase.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 			if(handler == null) return 0;
 			else return ItemHandlerHelper.calcRedstoneFromInventory(handler);
 		} else return 0;
@@ -179,9 +173,9 @@ public class BlockCADCase extends Block {
 			cadCase.setDyeColor(EnumDyeColor.byMetadata(stack.getItemDamage()));
 			if(stack.hasDisplayName()) cadCase.setName(stack.getDisplayName());
 			
-			IItemHandler stackHandler = stack.getCapability(ITEM_HANDLER_CAPABILITY, null);
+			IItemHandler stackHandler = stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 			if(stackHandler == null) return;
-			IItemHandler caseHandler = cadCase.getCapability(ITEM_HANDLER_CAPABILITY, null);
+			IItemHandler caseHandler = cadCase.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 			if(caseHandler == null) return;
 			
 			for(int i=0; i < caseHandler.getSlots(); i++) {
@@ -226,7 +220,7 @@ public class BlockCADCase extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag) {
-		IItemHandler stackHandler = stack.getCapability(ITEM_HANDLER_CAPABILITY, null);
+		IItemHandler stackHandler = stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		
 		boolean shifting = GuiScreen.isShiftKeyDown();
 		

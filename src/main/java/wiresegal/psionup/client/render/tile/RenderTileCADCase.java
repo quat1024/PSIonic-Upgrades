@@ -33,7 +33,6 @@ public class RenderTileCADCase extends TileEntitySpecialRenderer<TileCADCase> {
 		GlStateManager.enableRescaleNormal();
 		GlStateManager.translate(x, y, z);
 		
-		//mega oof TODO can this be cleaned up
 		EnumFacing facing = state.getValue(BlockCADCase.FACING);
 		GlStateManager.rotate(-facing.getHorizontalAngle(), 0f, 1f, 0f);
 		if(facing == EnumFacing.NORTH) {
