@@ -38,10 +38,21 @@ public class ItemLiquidColorizer extends ItemComponent implements ICADColorizer,
 				} else {
 					//The user did dye their colorizer, so pick a color halfway between.
 					//TODO Yoooo throw a sinewave on this, it will look sick
-					float[] colorSplit = QuatMiscHelpers.splitColor(color);
-					float[] inheritColorSplit = QuatMiscHelpers.splitColor(inheritColor);
-					float[] lerpedColor = QuatMiscHelpers.lerpColor(colorSplit, inheritColorSplit, 0.5f);
-					color = QuatMiscHelpers.mergeColor(lerpedColor);
+					int red = (color & 0xFF0000) >> 16;
+					int green = (color & 0x00FF00) >> 8;
+					int blue = color & 0x0000FF;
+					
+					int inheritRed = (inheritColor & 0xFF0000) >> 16;
+					int inheritGreen = (inheritColor & 0x00FF00) >> 8;
+					int inheritBlue = inheritColor & 0x0000FF;
+					
+					int lerp = 128;
+					
+					int mixedRed = red * (1 - lerp) + inheritRed * lerp;
+					int mixedGreen = green * (1 - lerp) + inheritGreen * lerp;
+					int mixedBlue = blue * (1 - lerp) + inheritBlue * lerp;
+					
+					color = ((mixedRed & 0xFF) << 16) | ((mixedGreen & 0xFF) << 8) | (mixedBlue & 0xFF);
 				}
 			}
 		}
