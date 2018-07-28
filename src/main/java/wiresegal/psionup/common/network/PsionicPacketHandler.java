@@ -1,5 +1,6 @@
 package wiresegal.psionup.common.network;
 
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -20,6 +21,7 @@ public class PsionicPacketHandler {
 		NET.registerMessage(MessageFlashSync.Handler.class, MessageFlashSync.class, id++, Side.SERVER);
 		NET.registerMessage(MessageParticleTrail.Handler.class, MessageParticleTrail.class, id++, Side.CLIENT);
 		NET.registerMessage(MessageSparkleSphere.Handler.class, MessageSparkleSphere.class, id++, Side.CLIENT);
+		NET.registerMessage(MessageSpamlessChat.Handler.class, MessageSpamlessChat.class, id++, Side.CLIENT);
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(PsionicUpgrades.INSTANCE, new GuiHandler());
 	}
@@ -30,6 +32,10 @@ public class PsionicPacketHandler {
 	
 	public static void sendToAllNear(IMessage message, World world, BlockPos point) {
 		sendToAllWithinRange(message, world, point, 128);
+	}
+	
+	public static void sendTo(IMessage message, EntityPlayerMP pmp) {
+		NET.sendTo(message, pmp);
 	}
 	
 	public static void sendToServer(IMessage message) {
