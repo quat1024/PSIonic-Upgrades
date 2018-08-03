@@ -5,20 +5,43 @@ A mod by yrsegal. A 1.10 -> 1.12 and Kotlin -> Java port by quaternary.
 
 Very unofficial, very broken, very unfinished.
 
-Build status
+Status
 ============
 
-Still needs *lots* of work before compilation can happen (let alone not crashing LMAO)
+It compiles!!!!!!!!!111!1!!11!1111!!
+
+### Things that are missing
+
+* Recipes
+* JEI Integration
+* Some Botania integration
+* Textures
+* Models
+* Renderers
+* A LOT MORE
+
+### Things that are buggy
+
+* Tricks and operators may behave differently
+* CAD Case
+* Conjured blocks
+* Everything else
+
+### Things that actually exist omgwtf????
+
+* Colored flowplates
+* Bugs
+* Crashes
 
 What in heck
 ============
 
-I miss Psionic Upgrades but I'm not comfortable dealing with Kotlin. So I rewrote the mod in Java.
+I miss Psionic Upgrades. I rewrote the mod in Java. Mistakes were made.
 
 Original README feature list
 =============================
 
-Keep in mind that at the moment literally nothing you see will work.
+Keep in mind that at the moment ~~literally nothing~~very few things you see will work.
 
 ## Items
 
